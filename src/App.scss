@@ -1,0 +1,5 @@
+@import "./Components/mixins";
+
+.main {
+  @include main;
+}

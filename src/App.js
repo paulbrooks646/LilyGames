@@ -1,9 +1,9 @@
 import './App.scss';
-import "./Components/Turtles"
+import Turtles from "./Components/Turtles/Turtles"
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <Turtles/>
     </div>
   );

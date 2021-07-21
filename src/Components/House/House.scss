@@ -1,0 +1,186 @@
+@import "../mixins";
+
+.house-body {
+  .house-top {
+    @include row(35vh);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    border-bottom: solid black 3px;
+    background-color: lightcyan;
+
+    .door {
+      height: 200px;
+      width: 140px;
+      padding: 10px;
+      @include center(flex-start);
+      background-color: chocolate;
+      border: solid black 2px;
+
+      .door-knob {
+        border-radius: 50%;
+        background-color: black;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .dining-div {
+      display: flex;
+      height: 200px;
+      width: 500px;
+      align-items: flex-end;
+      justify-content: space-evenly;
+
+      .chair-div-left {
+        @include flex(flex-start);
+        height: 200px;
+        width: 100px;
+        transform: scaleX(-1);
+
+        .chair-top-div {
+          width: 100%;
+          height: 90px;
+          @include center(flex-end);
+
+          .chair-top {
+            height: 100%;
+            width: 25px;
+            background-color: chocolate;
+          }
+        }
+
+        .chair-seat {
+          width: 100%;
+          height: 25px;
+          background-color: chocolate;
+        }
+
+        .chair-leg-div {
+          @include center(space-between);
+          height: 90px;
+          width: 100%;
+
+          .chair-leg {
+            height: 100%;
+            width: 25px;
+            background-color: chocolate;
+          }
+        }
+      }
+
+      .table-div {
+        @include flex(flex-start);
+        width: 200px;
+        height: 125px;
+
+        .table-top {
+          width: 200px;
+          height: 25px;
+          background-color: chocolate;
+        }
+
+        .table-leg-div {
+          @include center(space-between);
+          width: 200px;
+          height: 100px;
+
+          .table-leg {
+            height: 100px;
+            width: 30px;
+            background-color: chocolate;
+          }
+        }
+      }
+      .chair-div {
+        @include flex(flex-start);
+        height: 200px;
+        width: 100px;
+
+        .chair-top-div {
+          width: 100%;
+          height: 90px;
+          @include center(flex-end);
+
+          .chair-top {
+            height: 100%;
+            width: 25px;
+            background-color: chocolate;
+          }
+        }
+
+        .chair-seat {
+          width: 100%;
+          height: 25px;
+          background-color: chocolate;
+        }
+
+        .chair-leg-div {
+          @include center(space-between);
+          height: 90px;
+          width: 100%;
+
+          .chair-leg {
+            height: 100%;
+            width: 25px;
+            background-color: chocolate;
+          }
+        }
+      }
+    }
+
+    .dresser-div {
+      display: flex;
+      height: 250px;
+      width: 200px;
+
+      .dresser-side {
+        height: 100%;
+        width: 25px;
+        background-color: chocolate;
+      }
+      .dresser-middle {
+        @include flex(space-between);
+        height: 100%;
+        width: 150px;
+
+        .shelf {
+          width: 100%;
+          height: 10px;
+          background-color: chocolate;
+        }
+      }
+    }
+  } 
+
+  .house-bottom-middle {
+    @include flex(flex-start);
+    height: 55vh;
+    width: 100%;
+
+    .house-middle {
+      @include row(50%);
+      position: relative;
+      width: 100%;
+
+      .board {
+        height: 100%;
+        width: 2.5%;
+        background-color: sienna;
+        border: solid 2px black;
+      }
+    }
+    .house-bottom {
+      @include row(50%);
+      width: 100%;
+      position: relative;
+
+      .board {
+        height: 100%;
+        width: 2.5%;
+        background-color: sienna;
+        border: solid 2px black;
+      }
+    }
+  }
+}
