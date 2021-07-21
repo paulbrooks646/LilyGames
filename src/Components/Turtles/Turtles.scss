@@ -3,3 +3,75 @@
 .turtles-nav {
     height: 10vh;
 }
+
+.turtles-top {
+    height: 35vh;
+    width: 100vw;
+    position: absolute;
+    top: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+    .turtles-crib {
+        @include flex(flex-end);
+        width: 150px;
+
+        .turtles-crib-michelangelo {
+            text-align: center;
+            background-color: orange;
+            height: 20px;
+            width: 100%;
+            @include flex(center);
+        }
+        .turtles-crib-donatello {
+            text-align: center;
+            background-color: purple;
+            height: 20px;
+            width: 150px;
+            @include flex(center);
+        }
+        .turtles-crib-raphael {
+            text-align: center;
+            background-color: red;
+            height: 20px;
+            width: 150px;
+            @include flex(center);
+        }
+        .turtles-crib-leonardo {
+            text-align: center;
+            background-color: skyblue;
+            height: 20px;
+            width: 150px;
+            @include flex(center);
+        }
+        .turtles-crib-middle {
+            @include center(space-between);
+            width: 100%;
+
+            .turtles-crib-bar {
+                height: 75px;
+                width: 15px;
+                background-color: chocolate;
+                border: solid .5px;
+            }
+        }
+        .turtles-crib-bottom {
+            height: 15px;
+            width: 100%;
+            background-color: chocolate;
+            border: solid .5px;
+        }
+        .turtles-crib-legs {
+            @include center(space-between);
+            width: 100%;
+
+            .turtles-crib-leg {
+                width: 20px;
+                height: 50px;
+                background-color: chocolate;
+                border: solid .5px;
+            }
+        }
+    }
+}
