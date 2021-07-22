@@ -1,286 +1,599 @@
 @import "../mixins";
 
 .turtles-nav {
-    height: 10vh;
+  height: 10vh;
 }
 
 .turtles-top {
-    height: 35vh;
-    width: 100vw;
-    position: absolute;
-    top: 10vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
+  height: 35vh;
+  width: 100vw;
+  position: absolute;
+  top: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
 
-    .turtles-crib {
-        @include flex(flex-end);
-        width: 150px;
+  .turtles-crib {
+    @include flex(flex-end);
+    width: 150px;
 
-        .turtles-crib-michelangelo {
-            text-align: center;
-            background-color: orange;
-            height: 20px;
-            width: 100%;
-            @include flex(center);
-            border: solid .5px;
-        }
-        .turtles-crib-donatello {
-            text-align: center;
-            background-color: purple;
-            height: 20px;
-            width: 100%;
-            @include flex(center);
-            border: solid .5px;
-        }
-        .turtles-crib-raphael {
-            text-align: center;
-            background-color: red;
-            height: 20px;
-            width: 100%;
-            @include flex(center);
-            border: solid .5px;
-        }
-        .turtles-crib-leonardo {
-            text-align: center;
-            background-color: skyblue;
-            height: 20px;
-            width: 100%;
-            @include flex(center);
-            border: solid .5px;
-        }
-        .turtles-crib-middle {
-            @include center(space-between);
-            width: 100%;
-            position: relative;
-
-            .turtles-crib-bar {
-                height: 75px;
-                width: 15px;
-                background-color: chocolate;
-                border: solid .5px;
-                z-index: 1;
-            }
-
-            .turtles-crib-matress {
-                position: absolute;
-                bottom: 0px;
-                height: 8px;
-                width: 90%;
-                background-color: white;
-            }
-
-            .turtles-blanket-michelangelo {
-                position: absolute;
-                bottom: 8px;
-                width: 90%;
-                height: 5px;
-                background-color: orange;
-            }
-
-            .turtles-blanket-donatello {
-                position: absolute;
-                bottom: 8px;
-                width: 90%;
-                height: 5px;
-                background-color: purple;
-            
-            }
-
-            .turtles-blanket-leonardo {
-                position: absolute;
-                bottom: 8px;
-                width: 90%;
-                height: 5px;
-                background-color: skyblue;
-            }
-
-            .turtles-blanket-raphael {
-                position: absolute;
-                bottom: 8px;
-                width: 90%;
-                height: 5px;
-                background-color: red;
-            }
-               }
-        .turtles-crib-bottom {
-            height: 15px;
-            width: 100%;
-            background-color: chocolate;
-            border: solid .5px;
-        }
-        .turtles-crib-legs {
-            @include center(space-between);
-            width: 100%;
-
-            .turtles-crib-leg {
-                width: 20px;
-                height: 50px;
-                background-color: chocolate;
-                border: solid .5px;
-            }
-        }
+    .turtles-crib-michelangelo {
+      text-align: center;
+      background-color: orange;
+      height: 20px;
+      width: 100%;
+      @include flex(center);
+      border: solid 0.5px;
     }
+    .turtles-crib-donatello {
+      text-align: center;
+      background-color: purple;
+      height: 20px;
+      width: 100%;
+      @include flex(center);
+      border: solid 0.5px;
+    }
+    .turtles-crib-raphael {
+      text-align: center;
+      background-color: red;
+      height: 20px;
+      width: 100%;
+      @include flex(center);
+      border: solid 0.5px;
+    }
+    .turtles-crib-leonardo {
+      text-align: center;
+      background-color: skyblue;
+      height: 20px;
+      width: 100%;
+      @include flex(center);
+      border: solid 0.5px;
+    }
+    .turtles-crib-middle {
+      @include center(space-between);
+      width: 100%;
+      position: relative;
+
+      .turtles-crib-bar {
+        height: 75px;
+        width: 15px;
+        background-color: chocolate;
+        border: solid 0.5px;
+        z-index: 1;
+      }
+
+      .turtles-crib-matress {
+        position: absolute;
+        bottom: 0px;
+        height: 8px;
+        width: 90%;
+        background-color: white;
+      }
+
+      .turtles-blanket-michelangelo {
+        position: absolute;
+        bottom: 8px;
+        width: 90%;
+        height: 5px;
+        background-color: orange;
+      }
+
+      .turtles-blanket-donatello {
+        position: absolute;
+        bottom: 8px;
+        width: 90%;
+        height: 5px;
+        background-color: purple;
+      }
+
+      .turtles-blanket-leonardo {
+        position: absolute;
+        bottom: 8px;
+        width: 90%;
+        height: 5px;
+        background-color: skyblue;
+      }
+
+      .turtles-blanket-raphael {
+        position: absolute;
+        bottom: 8px;
+        width: 90%;
+        height: 5px;
+        background-color: red;
+      }
+
+      .turtle {
+      width: 150px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: limegreen;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      transform: scale(0.5);
+
+      .raphael {
+        height: 25px;
+        width: 100%;
+        background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .leonardo {
+        height: 25px;
+        width: 100%;
+        background-color: skyblue;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .michaelangelo {
+        height: 25px;
+        width: 100%;
+        background-color: orange;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .donatello {
+        height: 25px;
+        width: 100%;
+        background-color: purple;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .turtle-eye {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .turtle-pupil {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: black;
+        }
+      }
+
+      .turtle-mouth {
+        width: 80px;
+        height: 10px;
+        border-radius: 50%;
+        border-bottom: solid black 2px;
+      }
+    }
+
+    .turtle-closed {
+      display: none;
+    }
+    }
+    .turtles-crib-bottom {
+      height: 15px;
+      width: 100%;
+      background-color: chocolate;
+      border: solid 0.5px;
+    }
+    .turtles-crib-legs {
+      @include center(space-between);
+      width: 100%;
+
+      .turtles-crib-leg {
+        width: 20px;
+        height: 50px;
+        background-color: chocolate;
+        border: solid 0.5px;
+      }
+    }
+  }
 }
 
+.turtles-middle-left {
+  @include flex(center);
+  position: absolute;
+  height: 27.5vh;
+  width: 30vw;
+  left: 0px;
+  top: 45vh;
 
+  .basket {
+    @include flex(center);
+    transform: scale(2);
+    cursor: pointer;
+
+    .basket-handle {
+      border-radius: 50% 50% 0% 0%;
+      border-top: solid chocolate 5px;
+      border-left: solid chocolate 5px;
+      border-right: solid chocolate 5px;
+      height: 25px;
+      width: 45px;
+    }
+
+    .basket-bottom {
+      width: 60px;
+      height: 60px;
+      background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        chocolate 50%,
+        chocolate 80%,
+        transparent 80%
+      );
+      transform: rotate(135deg);
+      position: relative;
+      bottom: 30px;
+      border-radius: 25%;
+    }
+  }
+}
 
 .turtles-middle-middle {
-    @include flex(space-evenly);
-    position: absolute;
-    width: 40vw;
-    height: 27.5vh;
-    left: 30vw;
-    top: 45vh;
-    
-    .turtles-middle-middle-top {
-        @include center(space-evenly);
+  @include flex(space-evenly);
+  position: absolute;
+  width: 40vw;
+  height: 27.5vh;
+  left: 30vw;
+  top: 45vh;
+
+  .turtles-middle-middle-top {
+    @include center(space-evenly);
 
     .turtle {
-    width: 150px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: limegreen;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    transform: scale(.5);
-
-    .michaelangelo {
-      height: 25px;
-      width: 100%;
-      background-color: orange;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .raphael {
-      height: 25px;
-      width: 100%;
-      background-color: red;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .donatello {
-      height: 25px;
-      width: 100%;
-      background-color: purple;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .leonardo {
-      height: 25px;
-      width: 100%;
-      background-color: skyblue;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .turtle-eye {
-      height: 20px;
-      width: 20px;
+      width: 150px;
+      height: 100px;
       border-radius: 50%;
-      background-color: white;
+      background-color: limegreen;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
+      transform: scale(0.5);
 
-      .turtle-pupil {
-        height: 10px;
-        width: 10px;
+      .michaelangelo {
+        height: 25px;
+        width: 100%;
+        background-color: orange;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .donatello {
+        height: 25px;
+        width: 100%;
+        background-color: purple;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .turtle-eye {
+        height: 20px;
+        width: 20px;
         border-radius: 50%;
-        background-color: black;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .turtle-pupil {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: black;
+        }
+      }
+
+      .turtle-mouth {
+        width: 80px;
+        height: 10px;
+        border-radius: 50%;
+        border-bottom: solid black 2px;
       }
     }
 
-    .turtle-mouth {
-      width: 80px;
-      height: 10px;
-      border-radius: 50%;
-      border-bottom: solid black 2px;
-    }}
+    .turtle-closed {
+      display: none;
+    }
   }
   .turtles-middle-middle-bottom {
-      @include center(space-evenly);
+    @include center(space-evenly);
 
-       .turtle {
-    width: 150px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: limegreen;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    transform: scale(.5);
-
-    .michaelangelo {
-      height: 25px;
-      width: 100%;
-      background-color: orange;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .raphael {
-      height: 25px;
-      width: 100%;
-      background-color: red;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .donatello {
-      height: 25px;
-      width: 100%;
-      background-color: purple;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .leonardo {
-      height: 25px;
-      width: 100%;
-      background-color: skyblue;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-radius: 50% 50% 0% 0%;
-    }
-    .turtle-eye {
-      height: 20px;
-      width: 20px;
+    .turtle {
+      width: 150px;
+      height: 100px;
       border-radius: 50%;
-      background-color: white;
+      background-color: limegreen;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
+      transform: scale(0.5);
 
-      .turtle-pupil {
-        height: 10px;
-        width: 10px;
+      .raphael {
+        height: 25px;
+        width: 100%;
+        background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+
+      .leonardo {
+        height: 25px;
+        width: 100%;
+        background-color: skyblue;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50% 50% 0% 0%;
+      }
+      .turtle-eye {
+        height: 20px;
+        width: 20px;
         border-radius: 50%;
-        background-color: black;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .turtle-pupil {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: black;
+        }
+      }
+
+      .turtle-mouth {
+        width: 80px;
+        height: 10px;
+        border-radius: 50%;
+        border-bottom: solid black 2px;
       }
     }
 
-    .turtle-mouth {
-      width: 80px;
-      height: 10px;
-      border-radius: 50%;
-      border-bottom: solid black 2px;
-    }}
+    .turtle-closed {
+      display: none;
+    }
   }
+}
+
+.turtles-middle-right {
+  @include flex(center);
+  position: absolute;
+  width: 30vw;
+  height: 27.5vh;
+  right: 0px;
+  top: 45vh;
+
+  .turtles-book-div {
+    @include center(center);
+    cursor: pointer;
+    transform: scale(2.25);
+
+    .turtles-book-cover-front {
+      height: 40px;
+      width: 30px;
+      background-color: #ffff66;
+
+      .turtles-book-title {
+        width: 100%;
+        height: 5px;
+        @include center(center);
+        position: relative;
+        top: 10px;
+        color: magenta;
+      }
+    }
+    .turtles-book-page {
+      height: 40px;
+      background-color: white;
+      border-top: #ffff66 solid 1px;
+      border-bottom: #ffff66 solid 1px;
+      border-right: black solid 0.1px;
+      width: 1.75px;
+    }
+
+    .turtles-book-cover-back {
+      height: 40px;
+      background-color: #ffff66;
+      width: 1.5px;
+    }
+  }
+}
+
+.turtles-bottom-left {
+  @include flex(center);
+  height: 27.5vh;
+  width: 30vw;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+
+  .pinky {
+    position: relative;
+    height: 125px;
+    width: 125px;
+    cursor: pointer;
+
+    .pinky-horizontal-strands {
+      @include flex(space-evenly);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      .pinky-horizontal-strand {
+        width: 100%;
+        height: 3.5px;
+        background-image: linear-gradient(
+          90deg,
+          pink 10%,
+          white 10%,
+          white 15%,
+          pink 15%,
+          pink 25%,
+          silver 25%,
+          silver 30%,
+          pink 30%,
+          pink 40%,
+          white 40%,
+          white 45%,
+          pink 45%,
+          pink 55%,
+          silver 55%,
+          silver 60%,
+          pink 60%,
+          pink 70%,
+          white 70%,
+          white 75%,
+          pink 75%,
+          pink 85%,
+          silver 85%,
+          silver 90%,
+          pink 90%,
+          pink 100%
+        );
+      }
+    }
+
+    .pinky-vertical-strands {
+      @include center(space-evenly);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      .pinky-vertical-strand {
+        height: 100%;
+        width: 3.5px;
+        background-image: linear-gradient(
+          pink 10%,
+          white 10%,
+          white 15%,
+          pink 15%,
+          pink 25%,
+          silver 25%,
+          silver 30%,
+          pink 30%,
+          pink 40%,
+          white 40%,
+          white 45%,
+          pink 45%,
+          pink 55%,
+          silver 55%,
+          silver 60%,
+          pink 60%,
+          pink 70%,
+          white 70%,
+          white 75%,
+          pink 75%,
+          pink 85%,
+          silver 85%,
+          silver 90%,
+          pink 90%,
+          pink 100%
+        );
+      }
+    }
+  }
+}
+
+.turtles-bottom-right {
+  @include flex(center);
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 30vw;
+  height: 27.5vh;
+
+  .block-tower {
+    @include flex(flex-end);
+    cursor: pointer;
+
+    .block-tower-row-one {
+      @include center(center);
+
+      .block-tower-block {
+        background-color: peru;
+        height: 35px;
+        width: 35px;
+        @include flex(center);
+        color: palegreen;
+        border: solid black 0.5px;
+      }
+    }
+
+    .block-tower-row-two {
+      @include center(center);
+
+      .block-tower-block {
+        background-color: peru;
+        height: 35px;
+        width: 35px;
+        @include flex(center);
+        color: palegreen;
+        border: solid black 0.5px;
+      }
+    }
+
+    .block-tower-row-three {
+      @include center(center);
+
+      .block-tower-block {
+        background-color: peru;
+        height: 35px;
+        width: 35px;
+        @include flex(center);
+        color: palegreen;
+        border: solid black 0.5px;
+      }
+    }
+
+    .block-tower-row-four {
+      @include center(center);
+
+      .block-tower-block {
+        background-color: peru;
+        height: 35px;
+        width: 35px;
+        @include flex(center);
+        color: palegreen;
+        border: solid black 0.5px;
+      }
+    }
+  }
+}
+
+.turtles-bottom-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  justify-content: flex-end;
+  bottom: 0px;
+  left: 30vw;
+  height: 27.5vh;
+  width: 40vw;
+  
 }

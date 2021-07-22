@@ -1,5 +1,11 @@
 @import "./Components/mixins";
 
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 .main {
   @include main;
 }
