@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Turtles.scss"
 import House from "../House/House";
 import Swiper from "../Swiper/Swiper";
 
 export default function Turtles() {
+
+  const [animationOne, setAnimationOne] = useState(false)
+  const [animationTwo, setAnimationTwo] = useState(false)
+  const [swiper, setSwiped] = useState(false)
+  const [leonardoCrib, setLeonardoCrib] = useState(false)
+  const [donatelloCrib, setDonatelloCrib] = useState(false)
+  const [michelangeloCrib, setMichelangeloCrib] = useState(false)
+  const [raphaelCrib, setRaphaelCrib] = useState(false)
+  const [introductionCard, setIntroductionCard] = useState(false)
+  const [swipedCard, setSwipedCard] = useState(false)
+  const [basketCard, setBasketCard] = useState(false)
+  const [bookCard, setBookCard] = useState(false)
+  const [pinkyCard, setPinkyCard] = useState(false)
+  const [blockCard, setBlockCard] = useState(false)
+  const [ninjaCard, setNinjaCard] = useState(false)
+  const [basketFailureCard, setBasketFailureCard] = useState(false)
+  const [bookFailureCard, setBookFailureCard] = useState(false)
+  const [pinkyFailureCard, setPinkyFailureCard] = useState(false)
+  const [blockFailureCard, setBlockFailureCard] = useState(false)
+  const [completionCard, setCompletionCard] = useState(false)
+  const [instructionsCard, setInstructionsCard] = useState(false)
+
     return (
       <div className="main">
         <nav className="turtles-nav"></nav>
@@ -22,6 +44,17 @@ export default function Turtles() {
               <div className="turtles-crib-bar"></div>
               <div className="turtles-crib-matress"></div>
               <div className="turtles-blanket-michelangelo"></div>
+              <div className={`${michelangeloCrib ? "turtle" : "turtle-closed"}`}>
+                <div className="michaelangelo">
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                </div>
+                <div className="turtle-mouth"></div>
+              </div>
             </div>
             <div className="turtles-crib-bottom"></div>
             <div className="turtles-crib-legs">
@@ -42,6 +75,17 @@ export default function Turtles() {
               <div className="turtles-crib-bar"></div>
               <div className="turtles-crib-matress"></div>
               <div className="turtles-blanket-donatello"></div>
+              <div className={`${donatelloCrib ? "turtle" : "turtle-closed" }`}>
+                <div className="donatello">
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                </div>
+                <div className="turtle-mouth"></div>
+              </div>
             </div>
             <div className="turtles-crib-bottom"></div>
             <div className="turtles-crib-legs">
@@ -62,6 +106,17 @@ export default function Turtles() {
               <div className="turtles-crib-bar"></div>
               <div className="turtles-crib-matress"></div>
               <div className="turtles-blanket-leonardo"></div>
+              <div className={`${leonardoCrib ? "turtle" : "turtle-closed"}`}>
+                <div className="leonardo">
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                </div>
+                <div className="turtle-mouth"></div>
+              </div>
             </div>
             <div className="turtles-crib-bottom"></div>
             <div className="turtles-crib-legs">
@@ -82,6 +137,17 @@ export default function Turtles() {
               <div className="turtles-crib-bar"></div>
               <div className="turtles-crib-matress"></div>
               <div className="turtles-blanket-raphael"></div>
+              <div className={`${raphaelCrib ? "turtle" : "turtle-closed"}`}>
+                <div className="raphael">
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                  <div className="turtle-eye">
+                    <div className="turtle-pupil"></div>
+                  </div>
+                </div>
+                <div className="turtle-mouth"></div>
+              </div>
             </div>
             <div className="turtles-crib-bottom"></div>
             <div className="turtles-crib-legs">
@@ -92,7 +158,7 @@ export default function Turtles() {
         </div>
 
         <div className="turtles-middle-left">
-          <div className="basket">
+          <div className="basket" onClick={`${michelangeloCrib ? () => setBasketFailureCard(true) : () => setBasketCard(true)}`}>
             <div className="basket-handle"></div>
             <div className="basket-bottom"></div>
           </div>
@@ -215,7 +281,7 @@ export default function Turtles() {
             </div>
           </div>
           <div className="turtles-bottom-middle">
-            <Swiper/>
+            <Swiper />
           </div>
           <div className="turtles-bottom-right">
             <div className="block-tower">
@@ -260,6 +326,7 @@ export default function Turtles() {
             </div>
           </div>
         </div>
+        
       </div>
     );
 }

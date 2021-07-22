@@ -543,5 +543,15 @@
   }
 
   @keyframes Swiper {
-      
+      0% {
+          top: 300px;
+      }
+
+      50% {
+          top: 0px;
+      }
+
+      100% {
+          top: 300px;
+      }
   }
