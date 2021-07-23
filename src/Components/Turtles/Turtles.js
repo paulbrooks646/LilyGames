@@ -6,10 +6,10 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-export default function Turtles() {
+export default function Turtles(props) {
   const [animationOne, setAnimationOne] = useState(false);
   const [animationTwo, setAnimationTwo] = useState(false);
-  const [swiper, setSwiped] = useState(false);
+  const [swiped, setSwiped] = useState(false);
   const [leonardoCrib, setLeonardoCrib] = useState(false);
   const [donatelloCrib, setDonatelloCrib] = useState(false);
   const [michelangeloCrib, setMichelangeloCrib] = useState(false);
@@ -18,7 +18,7 @@ export default function Turtles() {
   const [donatelloTaken, setDonatelloTaken] = useState(false);
   const [michelangeloTaken, setMichelangeloTaken] = useState(false);
   const [raphaelTaken, setRaphaelTaken] = useState(false);
-  const [introductionCard, setIntroductionCard] = useState(false);
+  const [introductionCard, setIntroductionCard] = useState(true);
   const [swipedCard, setSwipedCard] = useState(false);
   const [basketCard, setBasketCard] = useState(false);
   const [bookCard, setBookCard] = useState(false);
@@ -36,28 +36,109 @@ export default function Turtles() {
   const [cribCard, setCribCard] = useState(false);
   const [otherTurtleCard, setOtherTurtleCard] = useState(false);
 
-  const toggleMichelangelo = () => {
-    setBasketCard(false);
-    setCurrentTurtle("Michelangelo");
-  };
-
   const toggleBasket = () => {
-    if (michelangeloCrib || currentTurtle === "Michelangelo") {
+    if (michelangeloTaken) {
       setBasketFailureCard(true);
     } else if (currentTurtle === "") {
       setBasketCard(true);
+      setMichelangeloTaken(true)
       setCurrentTurtle("Michelangelo");
     } else {
       setOtherTurtleCard(true);
     }
   };
 
+  const toggleBook = () => {
+    if (donatelloTaken) {
+      setBookFailureCard(true);
+    } else if (currentTurtle === "") {
+      setBookCard(true);
+      setDonatelloTaken(true);
+      setCurrentTurtle("Donatello");
+    } else {
+      setOtherTurtleCard(true);
+    }
+  };
+
+  const togglePinky = () => {
+    if (leonardoTaken) {
+      setPinkyFailureCard(true);
+    } else if (currentTurtle === "") {
+      setPinkyCard(true);
+      setLeonardoTaken(true);
+      setCurrentTurtle("Leonardo");
+    } else {
+      setOtherTurtleCard(true);
+    }
+  };
+
+  const toggleBlock = () => {
+    if (raphaelTaken) {
+      setBlockFailureCard(true);
+    } else if (currentTurtle === "") {
+      setBlockCard(true);
+      setRaphaelTaken(true);
+      setCurrentTurtle("Raphael");
+    } else {
+      setOtherTurtleCard(true);
+    }
+  };
+
+  const toggleAnimationOne = () => {
+    setIntroductionCard(false)
+    setAnimationOne(true)
+  }
+
+  const toggleAnimationTwo = () => {
+    setSwipedCard(false)
+    setAnimationOne(false)
+    setAnimationTwo(true)
+  }
+
+  const toggleMichelangeloCrib = () => {
+
+  }
+
+  const toggleDonatelloCrib = () => {
+
+  }
+
+  const toggleLeonardoCrib = () => {
+
+  }
+
+  const toggleRaphaelCrib = () => {
+    
+  }
+
   return (
     <div className="main">
-      <nav className="turtles-nav"></nav>
+      <nav className="turtles-nav">
+        <Typography variant="h4" color="primary" className="turtles-nav-text">
+          YOU ARE CURRENTLY HOLDING:
+        </Typography>
+        <div
+          className={`${currentTurtle ? "turtle" : "turtle-closed"}`}
+          onClick={() => setNinjaCard(true)}
+        >
+          <div className={currentTurtle.toLowerCase()}>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+          <div className="turtle-mouth"></div>
+        </div>
+      </nav>
       <House />
       <div className="turtles-top">
-        <div className="turtles-crib">
+        <div
+          className={`${
+            michelangeloCrib ? "turtles-crib-closed" : "turtles-crib"
+          }`} onClick={toggleMichelangeloCrib}
+        >
           <div className="turtles-crib-michelangelo">
             <h3>Michelangelo</h3>
           </div>
@@ -68,9 +149,13 @@ export default function Turtles() {
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-matress"></div>
             <div className="turtles-blanket-michelangelo"></div>
-            <div className={`${michelangeloCrib ? "turtle" : "turtle-closed"}`}>
+            <div
+              className={`${michelangeloCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
               <div className="michaelangelo">
                 <div className="turtle-eye">
                   <div className="turtle-pupil"></div>
@@ -88,7 +173,50 @@ export default function Turtles() {
             <div className="turtles-crib-leg"></div>
           </div>
         </div>
-        <div className="turtles-crib">
+        <div
+          className={`${
+            !michelangeloCrib ? "turtles-crib-closed" : "turtles-crib-filled"
+          }`}
+        >
+          <div className="turtles-crib-michelangelo">
+            <h3>Michelangelo</h3>
+          </div>
+          <div className="turtles-crib-middle">
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-matress"></div>
+            <div className="turtles-blanket-michelangelo"></div>
+            <div
+              className={`${michelangeloCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
+              <div className="michaelangelo">
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+              </div>
+              <div className="turtle-mouth"></div>
+            </div>
+          </div>
+          <div className="turtles-crib-bottom"></div>
+          <div className="turtles-crib-legs">
+            <div className="turtles-crib-leg"></div>
+            <div className="turtles-crib-leg"></div>
+          </div>
+        </div>
+        <div
+          className={`${
+            donatelloCrib ? "turtles-crib-closed" : "turtles-crib"
+          }`} onClick={toggleDonatelloCrib}
+        >
           <div className="turtles-crib-donatello">
             <h3>Donatello</h3>
           </div>
@@ -99,9 +227,13 @@ export default function Turtles() {
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-matress"></div>
             <div className="turtles-blanket-donatello"></div>
-            <div className={`${donatelloCrib ? "turtle" : "turtle-closed"}`}>
+            <div
+              className={`${donatelloCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
               <div className="donatello">
                 <div className="turtle-eye">
                   <div className="turtle-pupil"></div>
@@ -119,7 +251,48 @@ export default function Turtles() {
             <div className="turtles-crib-leg"></div>
           </div>
         </div>
-        <div className="turtles-crib">
+        <div
+          className={`${
+            !donatelloCrib ? "turtles-crib-closed" : "turtles-crib-filled"
+          }`}
+        >
+          <div className="turtles-crib-donatello">
+            <h3>Donatello</h3>
+          </div>
+          <div className="turtles-crib-middle">
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-matress"></div>
+            <div className="turtles-blanket-donatello"></div>
+            <div
+              className={`${donatelloCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
+              <div className="donatello">
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+              </div>
+              <div className="turtle-mouth"></div>
+            </div>
+          </div>
+          <div className="turtles-crib-bottom"></div>
+          <div className="turtles-crib-legs">
+            <div className="turtles-crib-leg"></div>
+            <div className="turtles-crib-leg"></div>
+          </div>
+        </div>
+        <div
+          className={`${leonardoCrib ? "turtles-crib-closed" : "turtles-crib"}`} onClick={toggleLeonardoCrib}
+        >
           <div className="turtles-crib-leonardo">
             <h3>Leonardo</h3>
           </div>
@@ -130,9 +303,13 @@ export default function Turtles() {
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-matress"></div>
             <div className="turtles-blanket-leonardo"></div>
-            <div className={`${leonardoCrib ? "turtle" : "turtle-closed"}`}>
+            <div
+              className={`${leonardoCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
               <div className="leonardo">
                 <div className="turtle-eye">
                   <div className="turtle-pupil"></div>
@@ -150,7 +327,48 @@ export default function Turtles() {
             <div className="turtles-crib-leg"></div>
           </div>
         </div>
-        <div className="turtles-crib">
+        <div
+          className={`${
+            !leonardoCrib ? "turtles-crib-closed" : "turtles-crib-filled"
+          }`}
+        >
+          <div className="turtles-crib-leonardo">
+            <h3>Leonardo</h3>
+          </div>
+          <div className="turtles-crib-middle">
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-matress"></div>
+            <div className="turtles-blanket-leonardo"></div>
+            <div
+              className={`${leonardoCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
+              <div className="leonardo">
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+              </div>
+              <div className="turtle-mouth"></div>
+            </div>
+          </div>
+          <div className="turtles-crib-bottom"></div>
+          <div className="turtles-crib-legs">
+            <div className="turtles-crib-leg"></div>
+            <div className="turtles-crib-leg"></div>
+          </div>
+        </div>
+        <div
+          className={`${raphaelCrib ? "turtles-crib-closed" : "turtles-crib"}`} onClick={toggleRaphaelCrib}
+        >
           <div className="turtles-crib-raphael">
             <h3>Raphael</h3>
           </div>
@@ -161,9 +379,52 @@ export default function Turtles() {
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
             <div className="turtles-crib-matress"></div>
             <div className="turtles-blanket-raphael"></div>
-            <div className={`${raphaelCrib ? "turtle" : "turtle-closed"}`}>
+            <div
+              className={`${raphaelCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
+              <div className="raphael">
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+                <div className="turtle-eye">
+                  <div className="turtle-pupil"></div>
+                </div>
+              </div>
+              <div className="turtle-mouth"></div>
+            </div>
+          </div>
+          <div className="turtles-crib-bottom"></div>
+          <div className="turtles-crib-legs">
+            <div className="turtles-crib-leg"></div>
+            <div className="turtles-crib-leg"></div>
+          </div>
+        </div>
+        <div
+          className={`${
+            !raphaelCrib ? "turtles-crib-closed" : "turtles-crib-filled"
+          }`}
+        >
+          <div className="turtles-crib-raphael">
+            <h3>Raphael</h3>
+          </div>
+          <div className="turtles-crib-middle">
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-bar"></div>
+            <div className="turtles-crib-matress"></div>
+            <div className="turtles-blanket-raphael"></div>
+            <div
+              className={`${raphaelCrib ? "turtle" : "turtle-closed"}`}
+              onClick={() => setNinjaCard(true)}
+            >
               <div className="raphael">
                 <div className="turtle-eye">
                   <div className="turtle-pupil"></div>
@@ -191,7 +452,7 @@ export default function Turtles() {
       </div>
       <div className="turtles-middle-middle">
         <div className="turtles-middle-middle-top">
-          <div className="turtle">
+          <div className={!swiped ? "turtle" : "turtle-closed"}>
             <div className="michaelangelo">
               <div className="turtle-eye">
                 <div className="turtle-pupil"></div>
@@ -202,7 +463,7 @@ export default function Turtles() {
             </div>
             <div className="turtle-mouth"></div>
           </div>
-          <div className="turtle">
+          <div className={!swiped ? "turtle" : "turtle-closed"}>
             <div className="donatello">
               <div className="turtle-eye">
                 <div className="turtle-pupil"></div>
@@ -216,7 +477,7 @@ export default function Turtles() {
           </div>
         </div>
         <div className="turtles-middle-middle-bottom">
-          <div className="turtle">
+          <div className={!swiped ? "turtle" : "turtle-closed"}>
             <div className="raphael">
               <div className="turtle-eye">
                 <div className="turtle-pupil"></div>
@@ -228,7 +489,7 @@ export default function Turtles() {
 
             <div className="turtle-mouth"></div>
           </div>
-          <div className="turtle">
+          <div className={!swiped ? "turtle" : "turtle-closed"}>
             <div className="leonardo">
               <div className="turtle-eye">
                 <div className="turtle-pupil"></div>
@@ -242,7 +503,7 @@ export default function Turtles() {
         </div>
       </div>
       <div className="turtles-middle-right">
-        <div className="turtles-book-div">
+        <div className="turtles-book-div" onClick={toggleBook}>
           <div className="turtles-book-cover-front">
             <div className="turtles-book-title">
               <h6>ABC</h6>
@@ -259,7 +520,7 @@ export default function Turtles() {
 
       <div className="turtles-bottom">
         <div className="turtles-bottom-left">
-          <div className="pinky">
+          <div className="pinky" onClick={togglePinky}>
             <div className="pinky-horizontal-strands">
               <div className="pinky-horizontal-strand"></div>
               <div className="pinky-horizontal-strand"></div>
@@ -307,10 +568,17 @@ export default function Turtles() {
           </div>
         </div>
         <div className="turtles-bottom-middle">
-          <Swiper />
+          <Swiper
+            one={animationOne}
+            two={animationTwo}
+            animation={(one) => setAnimationOne(one)}
+            tooLate={() => setSwipedCard(true)}
+            instructions={() => setInstructionsCard(true)}
+            hasSwiped={() => setSwiped(true)}
+          />
         </div>
         <div className="turtles-bottom-right">
-          <div className="block-tower">
+          <div className="block-tower" onClick={toggleBlock}>
             <div className="block-tower-row-one">
               <div className="block-tower-block">
                 <h2>1</h2>
@@ -362,7 +630,7 @@ export default function Turtles() {
           color="secondary"
           variant="contained"
           className="turtles-card-button"
-          onClick={toggleMichelangelo}
+          onClick={() => setBasketCard(false)}
         >
           CLOSE
         </Button>
@@ -374,6 +642,180 @@ export default function Turtles() {
       >
         <Typography variant="h4" color="primary" className="turtles-card-text">
           You find nothing else in the basket.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setBasketFailureCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          otherTurtleCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          First, figure out which crib to put baby {currentTurtle} in.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setOtherTurtleCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${ninjaCard ? "turtles-card" : "turtles-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Inja Inja
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setNinjaCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          introductionCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          The baby ninja turtles need a nap before Lily's birthday party. Please
+          put them in the right crib.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={toggleAnimationOne}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          instructionsCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Oh no! Swiper swiped the baby ninja turtles. Now you need to find them
+          before you can put them down for their naps.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setInstructionsCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${swipedCard ? "turtles-card" : "turtles-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You're too late! You'll never find the baby ninja turtles now! Ha ha
+          ha!
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={toggleAnimationTwo}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${bookCard ? "turtles-card" : "turtles-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Yay!!! You found baby Donatello hiding behind the book.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setBookCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          bookFailureCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You find nothing else behind the book.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setBookFailureCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${pinkyCard ? "turtles-card" : "turtles-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Yay!!! You found baby Leonardo hiding under Pinky.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setPinkyCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          pinkyFailureCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You find nothing else under Pinky.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setPinkyFailureCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${blockCard ? "turtles-card" : "turtles-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Yay!!! You found baby Raphael hiding behind the blocks.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setBlockCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          blockFailureCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You find nothing else behind the blocks.
         </Typography>
         <Button
           color="secondary"
