@@ -4,9 +4,10 @@ import House from "../House/House";
 import Swiper from "../Swiper/Swiper";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom"
 import Button from "@material-ui/core/Button";
 
-export default function Turtles(props) {
+export default function Turtles() {
   const [animationOne, setAnimationOne] = useState(false);
   const [animationTwo, setAnimationTwo] = useState(false);
   const [swiped, setSwiped] = useState(false);
@@ -33,6 +34,7 @@ export default function Turtles(props) {
   const [instructionsCard, setInstructionsCard] = useState(false);
   const [currentTurtle, setCurrentTurtle] = useState("");
   const [cribRejectionCard, setCribRejectionCard] = useState(false);
+  const [cribRejectionCardTwo, setCribRejectionCardTwo] = useState(false)
   const [cribCard, setCribCard] = useState(false);
   const [otherTurtleCard, setOtherTurtleCard] = useState(false);
 
@@ -96,40 +98,91 @@ export default function Turtles(props) {
   }
 
   const toggleMichelangeloCrib = () => {
-
+    if (!currentTurtle) {
+      setCribRejectionCard(true)
+    } else if (currentTurtle !== "Michelangelo") {
+      setCribRejectionCardTwo(true)
+    } else {
+      setMichelangeloCrib(true)
+      setCribCard(true)
+    
+    }
   }
 
   const toggleDonatelloCrib = () => {
-
+if (!currentTurtle) {
+  setCribRejectionCard(true);
+} else if (currentTurtle !== "Donatello") {
+  setCribRejectionCardTwo(true);
+} else {
+  setDonatelloCrib(true);
+  setCribCard(true);
+}
   }
 
   const toggleLeonardoCrib = () => {
-
+if (!currentTurtle) {
+  setCribRejectionCard(true);
+} else if (currentTurtle !== "Leonardo") {
+  setCribRejectionCardTwo(true);
+} else {
+  setLeonardoCrib(true);
+  setCribCard(true);
+}
   }
 
   const toggleRaphaelCrib = () => {
-    
+if (!currentTurtle) {
+  setCribRejectionCard(true);
+} else if (currentTurtle !== "Raphael") {
+  setCribRejectionCardTwo(true);
+} else {
+  setRaphaelCrib(true);
+  setCribCard(true);
+}
+  }
+
+  const toggleCurrentTurtle = () => {
+    if (michelangeloCrib && donatelloCrib && leonardoCrib && raphaelCrib) {
+       setCribCard(false);
+      setCurrentTurtle("");
+      setCompletionCard(true)
+    }
+    setCribCard(false)
+    setCurrentTurtle("")
   }
 
   return (
     <div className="main">
       <nav className="turtles-nav">
-        <Typography variant="h4" color="primary" className="turtles-nav-text">
-          YOU ARE CURRENTLY HOLDING:
-        </Typography>
-        <div
-          className={`${currentTurtle ? "turtle" : "turtle-closed"}`}
-          onClick={() => setNinjaCard(true)}
-        >
-          <div className={currentTurtle.toLowerCase()}>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
+        <div className="turtles-current">
+          <Typography variant="h5" color="primary" className="turtles-nav-text">
+            YOU ARE CURRENTLY HOLDING:
+          </Typography>
+          <div
+            className={`${currentTurtle ? "turtle" : "turtle-closed"}`}
+            onClick={() => setNinjaCard(true)}
+          >
+            <div className={currentTurtle.toLowerCase()}>
+              <div className="turtle-eye">
+                <div className="turtle-pupil"></div>
+              </div>
+              <div className="turtle-eye">
+                <div className="turtle-pupil"></div>
+              </div>
             </div>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
+            <div className="turtle-mouth"></div>
           </div>
-          <div className="turtle-mouth"></div>
+        </div>
+        <div className="turtles-button-div">
+          <Link to="/Food">
+            <Button color="primary" variant="contained">
+              FOOD
+            </Button>
+          </Link>
+          <Button color="secondary" variant="contained">
+            START OVER
+          </Button>
         </div>
       </nav>
       <House />
@@ -137,7 +190,8 @@ export default function Turtles(props) {
         <div
           className={`${
             michelangeloCrib ? "turtles-crib-closed" : "turtles-crib"
-          }`} onClick={toggleMichelangeloCrib}
+          }`}
+          onClick={toggleMichelangeloCrib}
         >
           <div className="turtles-crib-michelangelo">
             <h3>Michelangelo</h3>
@@ -215,7 +269,8 @@ export default function Turtles(props) {
         <div
           className={`${
             donatelloCrib ? "turtles-crib-closed" : "turtles-crib"
-          }`} onClick={toggleDonatelloCrib}
+          }`}
+          onClick={toggleDonatelloCrib}
         >
           <div className="turtles-crib-donatello">
             <h3>Donatello</h3>
@@ -291,7 +346,8 @@ export default function Turtles(props) {
           </div>
         </div>
         <div
-          className={`${leonardoCrib ? "turtles-crib-closed" : "turtles-crib"}`} onClick={toggleLeonardoCrib}
+          className={`${leonardoCrib ? "turtles-crib-closed" : "turtles-crib"}`}
+          onClick={toggleLeonardoCrib}
         >
           <div className="turtles-crib-leonardo">
             <h3>Leonardo</h3>
@@ -367,7 +423,8 @@ export default function Turtles(props) {
           </div>
         </div>
         <div
-          className={`${raphaelCrib ? "turtles-crib-closed" : "turtles-crib"}`} onClick={toggleRaphaelCrib}
+          className={`${raphaelCrib ? "turtles-crib-closed" : "turtles-crib"}`}
+          onClick={toggleRaphaelCrib}
         >
           <div className="turtles-crib-raphael">
             <h3>Raphael</h3>
@@ -688,8 +745,8 @@ export default function Turtles(props) {
         }`}
       >
         <Typography variant="h4" color="primary" className="turtles-card-text">
-          The baby ninja turtles need a nap before Lily's birthday party. Please
-          put them in the right crib.
+          The baby ninja turtles need a nap before Lily's party. Please put them
+          in the right crib.
         </Typography>
         <Button
           color="secondary"
@@ -794,9 +851,7 @@ export default function Turtles(props) {
           CLOSE
         </Button>
       </Card>
-      <Card
-        className={`${blockCard ? "turtles-card" : "turtles-card-closed"}`}
-      >
+      <Card className={`${blockCard ? "turtles-card" : "turtles-card-closed"}`}>
         <Typography variant="h4" color="primary" className="turtles-card-text">
           Yay!!! You found baby Raphael hiding behind the blocks.
         </Typography>
@@ -821,7 +876,70 @@ export default function Turtles(props) {
           color="secondary"
           variant="contained"
           className="turtles-card-button"
-          onClick={() => setBasketFailureCard(false)}
+          onClick={() => setBlockFailureCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          cribRejectionCard ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You don't have a baby ninja turtle to put in the crib.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setCribRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          cribRejectionCardTwo ? "turtles-card" : "turtles-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Uh oh! That is not {currentTurtle}'s bed!
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setCribRejectionCardTwo(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${cribCard ? "turtles-card" : "turtles-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          Yay! {currentTurtle} is now in his crib!
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={toggleCurrentTurtle}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${completionCard ? "turtles-card" : "turtles-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="turtles-card-text">
+          You did it! All the baby ninja turtles are taking their naps. They'll
+          be ready for Lily's party.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="turtles-card-button"
+          onClick={() => setCompletionCard(false)}
         >
           CLOSE
         </Button>

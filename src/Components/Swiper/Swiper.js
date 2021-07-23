@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Swiper.scss";
 
 export default function Swiper(props) {

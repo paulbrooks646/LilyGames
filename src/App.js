@@ -1,11 +1,12 @@
 import React from "react";
 import './App.scss';
-import Turtles from "./Components/Turtles/Turtles"
+import Routes from "./routes.js"
+
 
 function App() {
   return (
     <div className="main">
-      <Turtles/>
+      {Routes}
     </div>
   );
 }
