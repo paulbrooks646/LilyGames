@@ -5,7 +5,7 @@ import Food from "./Components/Food/Food"
 
 export default (
     <Switch>
-        <Route exact path="/" component={Turtles} />
-        <Route path="/Food" component={Food}/>
+        <Route exact path="/Turtles" component={Turtles} />
+        <Route path="/" component={Food}/>
     </Switch>
 )

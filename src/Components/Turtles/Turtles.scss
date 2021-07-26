@@ -7,9 +7,12 @@
   background-color: darkgray;
 
   .turtles-current {
+    display: flex;
+    align-items: center;
+
     .turtles-nav-text {
       position: relative;
-      left: 10px;
+      left: 5%;
     }
 
     .turtle {
@@ -93,6 +96,11 @@
     .turtle-closed {
       display: none;
     }
+  }
+
+  .turtles-button-div {
+    @include center(space-evenly);
+    width: 25%;
   }
 }
 

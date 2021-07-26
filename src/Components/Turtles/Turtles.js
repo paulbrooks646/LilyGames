@@ -38,6 +38,18 @@ export default function Turtles() {
   const [cribCard, setCribCard] = useState(false);
   const [otherTurtleCard, setOtherTurtleCard] = useState(false);
 
+  const toggleStartOver = () => {
+    setMichelangeloTaken(false)
+    setDonatelloTaken(false)
+    setLeonardoTaken(false)
+    setRaphaelTaken(false)
+    setMichelangeloCrib(false)
+    setDonatelloCrib(false)
+    setLeonardoCrib(false)
+    setRaphaelCrib(false)
+    setIntroductionCard(true)
+  }
+
   const toggleBasket = () => {
     if (michelangeloTaken) {
       setBasketFailureCard(true);
@@ -180,7 +192,7 @@ if (!currentTurtle) {
               FOOD
             </Button>
           </Link>
-          <Button color="secondary" variant="contained">
+          <Button color="secondary" variant="contained" onClick={toggleStartOver}>
             START OVER
           </Button>
         </div>
