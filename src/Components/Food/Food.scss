@@ -25,7 +25,7 @@
 .big-red-chicken {
   @include flex(flex-start);
   position: absolute;
-  bottom: 0px;
+  bottom: 100px;
   left: 20vw;
   width: 60vw;
 
@@ -104,6 +104,8 @@
         transform: rotate(135deg);
         border-right: solid 0.5px;
         border-top: solid 0.5px;
+        position: relative;
+        bottom: 15px;
       }
     }
   }
@@ -177,6 +179,8 @@
       z-index: 1;
 
       .chicken-body-middle {
+        position: relative;
+
         .chicken-body-middle-main {
           height: 280px;
           width: 290px;
@@ -193,7 +197,7 @@
             background-color: #ff8080;
             border-radius: 50%;
             position: relative;
-            bottom: 30px;
+            bottom: 25px;
             z-index: 1;
             @include flex(center);
 
@@ -203,7 +207,7 @@
               border-radius: 50%;
               background-color: red;
               position: relative;
-              top: 80px;
+              top: 70px;
             }
             .chicken-beard-two {
               height: 30px;
@@ -211,7 +215,7 @@
               border-radius: 50%;
               background-color: red;
               position: relative;
-              top: 70px;
+              top: 60px;
             }
 
             .chicken-beard-three {
@@ -220,7 +224,7 @@
               border-radius: 50%;
               background-color: red;
               position: relative;
-              top: 60px;
+              top: 50px;
             }
             .chicken-body-top-frills {
               width: 100%;
@@ -228,22 +232,29 @@
               display: flex;
               justify-content: space-evenly;
               position: relative;
-              top: 50px;
+              top: 45px;
 
               .chicken-body-top-frill-one {
-                
-                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
-                
+
                 position: absolute;
                 left: -7px;
                 bottom: 75px;
                 transform: rotate(200deg);
               }
               .chicken-body-top-frill-two {
-                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
@@ -253,7 +264,11 @@
                 transform: rotate(171deg);
               }
               .chicken-body-top-frill-three {
-                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
@@ -263,7 +278,11 @@
                 transform: rotate(145deg);
               }
               .chicken-body-top-frill-four {
-               background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
@@ -273,7 +292,11 @@
                 transform: rotate(120deg);
               }
               .chicken-body-top-frill-five {
-                  background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
@@ -283,7 +306,11 @@
                 transform: rotate(97deg);
               }
               .chicken-body-top-frill-six {
-                 background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                background-image: linear-gradient(
+                  45deg,
+                  transparent 50%,
+                  #ff8080 50%
+                );
                 height: 50px;
                 width: 50px;
                 border-radius: 0% 25% 0% 0%;
@@ -294,23 +321,136 @@
               }
             }
           }
-          .chicken-body-middle-frills {
-            .chicken-body-middle-frill-one {
-            }
-            .chicken-body-middle-frill-two {
-            }
-            .chicken-body-middle-frill-three {
-            }
-            .chicken-body-middle-frill-four {
-            }
-            .chicken-body-middle-frill-five {
-            }
-            .chicken-body-middle-frill-six {
-            }
-            .chicken-body-middle-frill-seven {
-            }
-            .chicken-body-middle-frill-eight {
-            }
+        }
+
+        .chicken-body-middle-frills {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-evenly;
+          position: absolute;
+          bottom: 0px;
+          z-index: 2;
+
+          .chicken-body-middle-frill-one {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+            position: absolute;
+            left: -14px;
+            bottom: 120px;
+            transform: rotate(205deg);
+            z-index: 2;
+          }
+          .chicken-body-middle-frill-two {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            left: 15px;
+            bottom: 72px;
+            transform: rotate(180deg);
+          }
+          .chicken-body-middle-frill-three {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            left: 55px;
+            bottom: 45px;
+            transform: rotate(160deg);
+          }
+          .chicken-body-middle-frill-four {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            right: 100px;
+            bottom: 30px;
+            transform: rotate(120deg);
+          }
+          .chicken-body-middle-frill-five {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            left: 100px;
+            bottom: 30px;
+            transform: rotate(145deg);
+          }
+          .chicken-body-middle-frill-six {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            right: 55px;
+            bottom: 45px;
+            transform: rotate(110deg);
+          }
+          .chicken-body-middle-frill-seven {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            right: 15px;
+            bottom: 72px;
+            transform: rotate(91deg);
+          }
+          .chicken-body-middle-frill-eight {
+            background-image: linear-gradient(
+              45deg,
+              transparent 50%,
+              crimson 50%
+            );
+            height: 50px;
+            width: 50px;
+            border-radius: 0% 25% 0% 0%;
+
+            position: absolute;
+            right: -14px;
+            bottom: 120px;
+            transform: rotate(67deg);
           }
         }
       }

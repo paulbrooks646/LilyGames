@@ -75,6 +75,16 @@ export default function Food() {
                   </div>
                 </div>
               </div>
+              <div className="chicken-body-middle-frills">
+                <div className="chicken-body-middle-frill-one"></div>
+                <div className="chicken-body-middle-frill-two"></div>
+                <div className="chicken-body-middle-frill-three"></div>
+                <div className="chicken-body-middle-frill-four"></div>
+                <div className="chicken-body-middle-frill-five"></div>
+                <div className="chicken-body-middle-frill-six"></div>
+                <div className="chicken-body-middle-frill-seven"></div>
+                <div className="chicken-body-middle-frill-eight"></div>
+              </div>
             </div>
           </div>
           <div className="chicken-arm-right">
