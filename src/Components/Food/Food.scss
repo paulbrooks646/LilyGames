@@ -1,0 +1,513 @@
+@import "../mixins";
+
+.food-nav {
+  height: 10vh;
+  width: 100vw;
+  @include center(space-between);
+  background-color: darkgray;
+
+  .food-current {
+    display: flex;
+    align-items: center;
+
+    .food-nav-text {
+      position: relative;
+      left: 5%;
+    }
+  }
+
+  .food-button-div {
+    @include center(space-evenly);
+    width: 25%;
+  }
+}
+
+.big-red-chicken {
+  @include flex(flex-start);
+  position: absolute;
+  bottom: 0px;
+  left: 20vw;
+  width: 60vw;
+
+  .chicken-hair {
+    height: 100px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(red 50%, transparent 50%);
+  }
+
+  .chicken-head {
+    position: relative;
+    bottom: 71px;
+    z-index: 2;
+
+    .chicken-brows {
+      @include center(space-evenly);
+
+      .chicken-brow-left {
+        height: 20px;
+        width: 20px;
+        background-image: linear-gradient(40deg, transparent 50%, #ff8080 50%);
+        position: relative;
+        right: 10px;
+        top: 15px;
+        transform: rotate(-50deg);
+      }
+
+      .chicken-brow-right {
+        height: 20px;
+        width: 20px;
+        background-image: linear-gradient(-40deg, transparent 50%, #ff8080 50%);
+        position: relative;
+        left: 10px;
+        top: 15px;
+        transform: rotate(50deg);
+      }
+    }
+
+    .chicken-face {
+      height: 150px;
+      width: 150px;
+      background-image: linear-gradient(#ff8080 50%, transparent 50%);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .chicken-eyes {
+        @include center(space-evenly);
+        width: 100%;
+        height: 25px;
+        top: 10px;
+
+        .chicken-eye {
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          background-color: white;
+          @include flex(center);
+
+          .chicken-pupil {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: black;
+          }
+        }
+      }
+
+      .chicken-beak {
+        height: 60px;
+        width: 60px;
+        background-image: linear-gradient(45deg, transparent 50%, #ffa500 50%);
+        border-radius: 0% 25%;
+        transform: rotate(135deg);
+        border-right: solid 0.5px;
+        border-top: solid 0.5px;
+      }
+    }
+  }
+
+  .chicken-center {
+    @include center(center);
+
+    .chicken-arm-left {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-radius: 25% 0% 0% 25%;
+      position: relative;
+      bottom: 150px;
+      left: 40px;
+      transform: rotate(-45deg);
+
+      .chicken-finger-one {
+        height: 100px;
+        width: 30px;
+        border-radius: 50% 0% 0% 50%;
+        background-color: red;
+        position: relative;
+        right: 17px;
+        transform: rotate(50deg);
+        bottom: 12px;
+      }
+      .chicken-finger-two {
+        height: 100px;
+        width: 30px;
+        border-radius: 50% 0% 0% 50%;
+        background-color: red;
+        position: relative;
+        right: 29px;
+        transform: rotate(10deg);
+        bottom: 6px;
+      }
+      .chicken-finger-three {
+        height: 100px;
+        width: 30px;
+        border-radius: 50% 0% 0% 50%;
+        background-color: red;
+        position: relative;
+        right: 29px;
+        bottom: 3px;
+      }
+      .chicken-finger-four {
+        height: 100px;
+        width: 30px;
+        border-radius: 50% 0% 0% 50%;
+        background-color: red;
+        position: relative;
+        right: 25px;
+        top: 4px;
+        transform: rotate(-30deg);
+      }
+    }
+
+    .chicken-body {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      background-color: red;
+      @include flex(flex-start);
+      overflow: hidden;
+      bottom: 165px;
+      z-index: 1;
+
+      .chicken-body-middle {
+        .chicken-body-middle-main {
+          height: 280px;
+          width: 290px;
+          background-color: crimson;
+          border-radius: 50%;
+          position: relative;
+          overflow: hidden;
+          @include flex(flex-start);
+          bottom: 50px;
+
+          .chicken-body-top {
+            height: 230px;
+            width: 230px;
+            background-color: #ff8080;
+            border-radius: 50%;
+            position: relative;
+            bottom: 30px;
+            z-index: 1;
+            @include flex(center);
+
+            .chicken-beard-one {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              background-color: red;
+              position: relative;
+              top: 80px;
+            }
+            .chicken-beard-two {
+              height: 30px;
+              width: 25px;
+              border-radius: 50%;
+              background-color: red;
+              position: relative;
+              top: 70px;
+            }
+
+            .chicken-beard-three {
+              height: 30px;
+              width: 20px;
+              border-radius: 50%;
+              background-color: red;
+              position: relative;
+              top: 60px;
+            }
+            .chicken-body-top-frills {
+              width: 100%;
+              height: 100px;
+              display: flex;
+              justify-content: space-evenly;
+              position: relative;
+              top: 50px;
+
+              .chicken-body-top-frill-one {
+                
+                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                
+                position: absolute;
+                left: -7px;
+                bottom: 75px;
+                transform: rotate(200deg);
+              }
+              .chicken-body-top-frill-two {
+                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                position: absolute;
+                left: 20px;
+                bottom: 33px;
+                transform: rotate(171deg);
+              }
+              .chicken-body-top-frill-three {
+                background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                position: absolute;
+                bottom: 12px;
+                left: 65px;
+                transform: rotate(145deg);
+              }
+              .chicken-body-top-frill-four {
+               background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                position: absolute;
+                bottom: 10px;
+                right: 65px;
+                transform: rotate(120deg);
+              }
+              .chicken-body-top-frill-five {
+                  background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                position: absolute;
+                right: 20px;
+                bottom: 33px;
+                transform: rotate(97deg);
+              }
+              .chicken-body-top-frill-six {
+                 background-image: linear-gradient(45deg, transparent 50%, #ff8080 50%);
+                height: 50px;
+                width: 50px;
+                border-radius: 0% 25% 0% 0%;
+                position: absolute;
+                right: -7px;
+                bottom: 75px;
+                transform: rotate(75deg);
+              }
+            }
+          }
+          .chicken-body-middle-frills {
+            .chicken-body-middle-frill-one {
+            }
+            .chicken-body-middle-frill-two {
+            }
+            .chicken-body-middle-frill-three {
+            }
+            .chicken-body-middle-frill-four {
+            }
+            .chicken-body-middle-frill-five {
+            }
+            .chicken-body-middle-frill-six {
+            }
+            .chicken-body-middle-frill-seven {
+            }
+            .chicken-body-middle-frill-eight {
+            }
+          }
+        }
+      }
+    }
+    .chicken-arm-right {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-radius: 0% 25% 25% 0%;
+      position: relative;
+      bottom: 150px;
+      right: 40px;
+      transform: rotate(45deg);
+
+      .chicken-finger-one {
+        height: 100px;
+        width: 30px;
+        border-radius: 0% 50% 50% 0%;
+        background-color: red;
+        position: relative;
+        left: 17px;
+        transform: rotate(-50deg);
+        bottom: 12px;
+      }
+      .chicken-finger-two {
+        height: 100px;
+        width: 30px;
+        border-radius: 0% 50% 50% 0%;
+        background-color: red;
+        position: relative;
+        left: 29px;
+        transform: rotate(-10deg);
+        bottom: 6px;
+      }
+      .chicken-finger-three {
+        height: 100px;
+        width: 30px;
+        border-radius: 0% 50% 50% 0%;
+        background-color: red;
+        position: relative;
+        left: 29px;
+        bottom: 3px;
+      }
+      .chicken-finger-four {
+        height: 100px;
+        width: 30px;
+        border-radius: 0% 50% 50% 0%;
+        background-color: red;
+        position: relative;
+        left: 25px;
+        top: 4px;
+
+        transform: rotate(30deg);
+      }
+    }
+  }
+  .chicken-legs {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 185px;
+
+    .chicken-leg {
+      background-image: linear-gradient(
+        #ffae42 50%,
+        black 50%,
+        black 52%,
+        #ffae42 52%,
+        #ffae42 65%,
+        black 65%,
+        black 67%,
+        #ffae42 67%,
+        #ffae42 80%,
+        black 80%,
+        black 82%,
+        #ffae42 82%
+      );
+      height: 50px;
+      width: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      .chicken-foot {
+        display: flex;
+        justify-content: space-evenly;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        position: relative;
+        top: 47px;
+
+        .chicken-toe-one {
+          background-image: linear-gradient(
+            #ffae42 50%,
+            black 50%,
+            black 52%,
+            #ffae42 52%,
+            #ffae42 65%,
+            black 65%,
+            black 67%,
+            #ffae42 67%,
+            #ffae42 80%,
+            black 80%,
+            black 82%,
+            #ffae42 82%
+          );
+
+          height: 50px;
+          width: 15px;
+          border-radius: 0% 0% 50% 50%;
+          transform: rotate(60deg);
+          position: relative;
+          bottom: 13px;
+          right: 7px;
+        }
+        .chicken-toe-two {
+          background-image: linear-gradient(
+            #ffae42 50%,
+            black 50%,
+            black 52%,
+            #ffae42 52%,
+            #ffae42 65%,
+            black 65%,
+            black 67%,
+            #ffae42 67%,
+            #ffae42 80%,
+            black 80%,
+            black 82%,
+            #ffae42 82%
+          );
+
+          height: 50px;
+          width: 15px;
+          border-radius: 0% 0% 50% 50%;
+          transform: rotate(15deg);
+
+          position: relative;
+          right: 3px;
+          bottom: 5px;
+        }
+        .chicken-toe-three {
+          background-image: linear-gradient(
+            #ffae42 50%,
+            black 50%,
+            black 52%,
+            #ffae42 52%,
+            #ffae42 65%,
+            black 65%,
+            black 67%,
+            #ffae42 67%,
+            #ffae42 80%,
+            black 80%,
+            black 82%,
+            #ffae42 82%
+          );
+
+          height: 50px;
+          width: 15px;
+          border-radius: 0% 0% 50% 50%;
+          transform: rotate(-15deg);
+
+          position: relative;
+          bottom: 5px;
+          left: 3px;
+        }
+        .chicken-toe-four {
+          background-image: linear-gradient(
+            #ffae42 50%,
+            black 50%,
+            black 52%,
+            #ffae42 52%,
+            #ffae42 65%,
+            black 65%,
+            black 67%,
+            #ffae42 67%,
+            #ffae42 80%,
+            black 80%,
+            black 82%,
+            #ffae42 82%
+          );
+
+          height: 50px;
+          width: 15px;
+          border-radius: 0% 0% 50% 50%;
+          transform: rotate(-60deg);
+          position: relative;
+          bottom: 13px;
+          left: 6px;
+        }
+      }
+    }
+  }
+}
