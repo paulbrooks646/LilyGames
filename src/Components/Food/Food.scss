@@ -9,13 +9,12 @@
   .food-current {
     display: flex;
     align-items: center;
-    width: 75%;
     height: 100%;
 
     .food-nav-text {
       position: relative;
-      margin-right: 5px;
-      margin-left: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
     }
     .ladder-div {
       height: 100%;
@@ -895,27 +894,177 @@
     .treat-div-closed {
       display: none;
     }
+  }
 
-    .food-button-div {
-      @include center(space-evenly);
-      width: 25%;
-    }
+  .food-button-div {
+    @include center(space-evenly);
+    width: 25%;
   }
 }
 
 .big-red-chicken {
   @include flex(flex-start);
   position: absolute;
-  bottom: -50px;
+  bottom: -100px;
   left: 20vw;
   width: 60vw;
-  
 
   .chicken-hair {
     height: 100px;
     width: 30px;
     border-radius: 50%;
     background-image: linear-gradient(red 50%, transparent 50%);
+  }
+
+  .chicken-hair-closed {
+    display: none;
+  }
+
+  .cake {
+    @include flex(center);
+    position: relative;
+    bottom: 45px;
+    z-index: 3;
+    cursor: pointer;
+
+    .cake-candle-div {
+      display: flex;
+      justify-content: space-evenly;
+      width: 40px;
+
+      .cake-candle-one-div {
+        @include flex(flex-start);
+
+        .candle-one-wick {
+          height: 3px;
+          width: 2px;
+          background-color: white;
+        }
+        .candle-one-main {
+          width: 5px;
+          height: 20px;
+          background-color: purple;
+        }
+      }
+      .cake-candle-two-div {
+        @include flex(flex-start);
+        .candle-two-wick {
+          height: 3px;
+          width: 2px;
+          background-color: white;
+        }
+        .candle-two-main {
+          width: 5px;
+          height: 20px;
+          background-color: orange;
+        }
+      }
+
+      .cake-candle-three-div {
+        @include flex(flex-start);
+        .candle-three-wick {
+          height: 3px;
+          width: 2px;
+          background-color: white;
+        }
+        .candle-three-main {
+          width: 5px;
+          height: 20px;
+          background-color: skyblue;
+        }
+      }
+    }
+
+    .cake-top {
+      width: 40px;
+      height: 20px;
+      background-image: linear-gradient(
+        -45deg,
+        white 15%,
+        orange 15%,
+        orange 19%,
+        white 19%,
+        white 34%,
+        orange 34%,
+        orange 38%,
+        white 38%,
+        white 53%,
+        orange 53%,
+        orange 57%,
+        white 57%,
+        white 72%,
+        orange 72%,
+        orange 76%,
+        white 76%,
+        white 91%,
+        orange 91%,
+        orange 95%,
+        white 95%
+      );
+
+      border-bottom: solid 0.5px;
+    }
+    .cake-middle {
+      width: 60px;
+      height: 25px;
+
+      background-image: linear-gradient(
+        45deg,
+        white 15%,
+        skyblue 15%,
+        skyblue 19%,
+        white 19%,
+        white 34%,
+        skyblue 34%,
+        skyblue 38%,
+        white 38%,
+        white 53%,
+        skyblue 53%,
+        skyblue 57%,
+        white 57%,
+        white 72%,
+        skyblue 72%,
+        skyblue 76%,
+        white 76%,
+        white 91%,
+        skyblue 91%,
+        skyblue 95%,
+        white 95%
+      );
+      border-bottom: solid 0.5px;
+    }
+    .cake-bottom {
+      width: 80px;
+      height: 30px;
+
+      background-image: linear-gradient(
+        -45deg,
+        white 15%,
+        purple 15%,
+        purple 19%,
+        white 19%,
+        white 34%,
+        purple 34%,
+        purple 38%,
+        white 38%,
+        white 53%,
+        purple 53%,
+        purple 57%,
+        white 57%,
+        white 72%,
+        purple 72%,
+        purple 76%,
+        white 76%,
+        white 91%,
+        purple 91%,
+        purple 95%,
+        white 95%
+      );
+    }
+  }
+
+  .cake-closed {
+    display: none;
   }
 
   .chicken-head {
@@ -1335,6 +1484,140 @@
             transform: rotate(67deg);
           }
         }
+
+        .ant-div {
+          @include flex(space-evenly);
+          position: absolute;
+          z-index: 5;
+          height: 75px;
+          width: 75px;
+          bottom: 55px;
+          left: 110px;
+          cursor: pointer;
+
+          .ant-div-top {
+            height: 50%;
+            width: 100%;
+            @include center(space-evenly);
+
+            .ant-one {
+              @include flex(flex-start);
+              .ant-pincers {
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                border-right: solid 0.5px;
+                border-left: solid 0.5px;
+              }
+
+              .ant-segment {
+                @include center(center);
+
+                .ant-leg {
+                  width: 3px;
+                  height: 1px;
+                  background-color: black;
+                }
+                .ant-body {
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  background-color: black;
+                }
+              }
+            }
+            .ant-two {
+              @include flex(flex-start);
+              transform: rotate(90deg);
+              .ant-pincers {
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                border-right: solid 0.5px;
+                border-left: solid 0.5px;
+              }
+
+              .ant-segment {
+                @include center(center);
+
+                .ant-leg {
+                  width: 3px;
+                  height: 1px;
+                  background-color: black;
+                }
+                .ant-body {
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  background-color: black;
+                }
+              }
+            }
+          }
+          .ant-div-bottom {
+            height: 50%;
+            width: 100%;
+            @include center(space-evenly);
+
+            .ant-three {
+              @include flex(flex-start);
+              transform: rotate(-90deg);
+              .ant-pincers {
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                border-right: solid 0.5px;
+                border-left: solid 0.5px;
+              }
+
+              .ant-segment {
+                @include center(center);
+
+                .ant-leg {
+                  width: 3px;
+                  height: 1px;
+                  background-color: black;
+                }
+                .ant-body {
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  background-color: black;
+                }
+              }
+            }
+            .ant-four {
+              @include flex(flex-start);
+              transform: rotate(180deg);
+              .ant-pincers {
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                border-right: solid 0.5px;
+                border-left: solid 0.5px;
+              }
+
+              .ant-segment {
+                @include center(center);
+
+                .ant-leg {
+                  width: 3px;
+                  height: 1px;
+                  background-color: black;
+                }
+                .ant-body {
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                  background-color: black;
+                }
+              }
+            }
+          }
+        }
+        .ant-div-closed {
+          display: none;
+        }
       }
     }
     .chicken-arm-right {
@@ -1388,13 +1671,12 @@
         position: relative;
         left: 25px;
         top: 4px;
-
         transform: rotate(30deg);
       }
     }
   }
   .chicken-legs {
-    width: 30%;
+    width: 150px;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -1530,6 +1812,47 @@
           left: 6px;
         }
       }
+    }
+    .chicken-leg-closed {
+      display: none;
+    }
+
+    .bucket-div {
+      @include flex(flex-start);
+      z-index: 2;
+      position: relative;
+      bottom: 50px;
+      cursor: pointer;
+
+      .bucket-top {
+        width: 77px;
+        height: 55px;
+        border-radius: 50% 50% 10% 10%;
+        border: solid 5px silver;
+        border-bottom: none;
+        z-index: 1;
+        position: relative;
+        top: 12px;
+      }
+      .bucket-bottom {
+        width: 75px;
+        height: 85px;
+        background-color: peru;
+
+        border: solid 0.5px;
+        border-top: solid 10px;
+        @include flex(space-evenly);
+        border-radius: 10% 10% 0% 0%;
+
+         .bucket-line {
+           height: 8px;
+           width: 100%;
+           background-color: gray;
+         }
+      }
+    }
+    .bucket-div-closed {
+      display: none;
     }
   }
 }

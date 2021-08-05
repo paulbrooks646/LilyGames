@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Food.scss";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
@@ -6,10 +6,19 @@ import Typography from "@material-ui/core/Typography";
 import House from "../House/House";
 
 export default function Food() {
-
-  const [bucket, setBucket] = useState(false)
+  const [bucket, setBucket] = useState(false);
+  const [cake, setCake] = useState(false);
+  const [umbrella, setUmbrella] = useState(false);
+  const [ants, setAnts] = useState(false);
+  const [scratcher, setScratcher] = useState(false)
+  const [finished, setFinished] = useState(false);
 
   const toggleStartOver = () => {};
+  const toggleLadder = () => {};
+  const toggleTreats = () => {};
+  const togglescratcher = () => {};
+  const toggleumbrella = () => {};
+  const toggleLotion = () => {};
 
   return (
     <div className="main">
@@ -18,7 +27,10 @@ export default function Food() {
           <Typography variant="h6" color="primary" className="food-nav-text">
             BACKPACK CONTAINS:
           </Typography>
-          <div className="ladder-div">
+          <div
+            className={`${cake ? "ladder-div-closed" : "ladder-div"}`}
+            onClick={toggleLadder}
+          >
             <div className="ladder">
               <div className="ladder-left"></div>
               <div className="ladder-middle">
@@ -34,7 +46,10 @@ export default function Food() {
               LADDER
             </Typography>
           </div>
-          <div className="lotion-div">
+          <div
+            className={`${bucket ? "lotion-div-closed" : "lotion-div"}`}
+            onClick={toggleLotion}
+          >
             <div className="lotion">
               <div className="lotion-lid"></div>
               <div className="lotion-bottle"></div>
@@ -43,8 +58,10 @@ export default function Food() {
               LOTION
             </Typography>
           </div>
-
-          <div className="scratcher-div">
+          <div
+            className={`${ants ? "scratcher-div-closed" : "scratcher-div"}`}
+            onClick={togglescratcher}
+          >
             <div className="scratcher">
               <div className="scratcher-top">
                 <div className="scratcher-tine"></div>
@@ -59,7 +76,10 @@ export default function Food() {
               SCRATCHER
             </Typography>
           </div>
-          <div className="umbrella-div">
+          <div
+            className={`${umbrella ? "umbrella-div-closed" : "umbrella-div"}`}
+            onClick={toggleumbrella}
+          >
             <div className="umbrella">
               <div className="umbrella-top"></div>
               <div className="umbrella-middle"></div>
@@ -69,7 +89,10 @@ export default function Food() {
               UMBRELLA
             </Typography>
           </div>
-          <div className="treat-div">
+          <div
+            className={`${finished ? "treat-div-closed" : "treat-div"}`}
+            onClick={toggleTreats}
+          >
             <div className="treat">
               <div className="sucker">
                 <div className="sucker-top"></div>
@@ -183,7 +206,28 @@ export default function Food() {
       </nav>
       <House />
       <div className="big-red-chicken">
-        <div className="chicken-hair"></div>
+        <div
+          className={`${cake ? "chicken-hair" : "chicken-hair-closed"}`}
+        ></div>
+        <div className={`${cake ? "cake-closed" : "cake"}`}>
+          <div className="cake-candle-div">
+            <div className="cake-candle-one-div">
+              <div className="candle-one-wick"></div>
+              <div className="candle-one-main"></div>
+            </div>
+            <div className="cake-candle-two-div">
+              <div className="candle-two-wick"></div>
+              <div className="candle-two-main"></div>
+            </div>
+            <div className="cake-candle-three-div">
+              <div className="candle-three-wick"></div>
+              <div className="candle-three-main"></div>
+            </div>
+          </div>
+          <div className="cake-top"></div>
+          <div className="cake-middle"></div>
+          <div className="cake-bottom"></div>
+        </div>
         <div className="chicken-head">
           <div className="chicken-brows">
             <div className="chicken-brow-left"></div>
@@ -235,6 +279,84 @@ export default function Food() {
                 <div className="chicken-body-middle-frill-seven"></div>
                 <div className="chicken-body-middle-frill-eight"></div>
               </div>
+              <div className={`${scratcher ? "ant-div-closed" : "ant-div"}`}>
+                <div className="ant-div-top">
+                  <div className="ant-one">
+                    <div className="ant-pincers"></div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                  </div>
+                  <div className="ant-two">
+                    <div className="ant-pincers"></div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="ant-div-bottom">
+                  <div className="ant-three">
+                    <div className="ant-pincers"></div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                  </div>
+                  <div className="ant-four">
+                    <div className="ant-pincers"></div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                    <div className="ant-segment">
+                      <div className="ant-leg"></div>
+                      <div className="ant-body"></div>
+                      <div className="ant-leg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="chicken-arm-right">
@@ -253,12 +375,19 @@ export default function Food() {
               <div className="chicken-toe-four"></div>
             </div>
           </div>
-          <div className="chicken-leg">
+          <div className={`${bucket ? "chicken-leg" : "chicken-leg-closed"}`}>
             <div className="chicken-foot">
               <div className="chicken-toe-one"></div>
               <div className="chicken-toe-two"></div>
               <div className="chicken-toe-three"></div>
               <div className="chicken-toe-four"></div>
+            </div>
+          </div>
+          <div className={`${bucket ? "bucket-div-closed" : "bucket-div"}`}>
+            <div className="bucket-top"></div>
+            <div className="bucket-bottom">
+              <div className="bucket-line"></div>
+              <div className="bucket-line"></div>
             </div>
           </div>
         </div>
