@@ -6,14 +6,21 @@ import Typography from "@material-ui/core/Typography";
 import House from "../House/House";
 
 export default function Food() {
-  const [bucket, setBucket] = useState(false);
-  const [cake, setCake] = useState(false);
-  const [umbrella, setUmbrella] = useState(false);
-  const [ants, setAnts] = useState(false);
-  const [scratcher, setScratcher] = useState(false)
+  const [bucket, setBucket] = useState(true);
+  const [cake, setCake] = useState(true);
+  const [umbrella, setUmbrella] = useState(true);
+  const [ants, setAnts] = useState(true);
   const [finished, setFinished] = useState(false);
+  const [current, setCurrent] = useState("")
 
-  const toggleStartOver = () => {};
+  const toggleStartOver = () => {
+    setBucket(false)
+    setCake(false)
+    setUmbrella(false)
+    setAnts(false)
+    setFinished(false)
+    setCurrent("")
+  };
   const toggleLadder = () => {};
   const toggleTreats = () => {};
   const togglescratcher = () => {};
@@ -279,7 +286,7 @@ export default function Food() {
                 <div className="chicken-body-middle-frill-seven"></div>
                 <div className="chicken-body-middle-frill-eight"></div>
               </div>
-              <div className={`${scratcher ? "ant-div-closed" : "ant-div"}`}>
+              <div className={`${ants ? "ant-div-closed" : "ant-div"}`}>
                 <div className="ant-div-top">
                   <div className="ant-one">
                     <div className="ant-pincers"></div>
@@ -364,6 +371,18 @@ export default function Food() {
             <div className="chicken-finger-two"></div>
             <div className="chicken-finger-three"></div>
             <div className="chicken-finger-four"></div>
+            <div
+              className={`${umbrella ? "umbrella-div" : "umbrella-div-closed"}`}
+            >
+              <div className="umbrella">
+                <div className="umbrella-top"></div>
+                <div className="umbrella-middle"></div>
+                <div className="umbrella-bottom"></div>
+              </div>
+            </div>
+            <div
+              className={`${umbrella ? "handle-div-closed" : "handle-div"}`}
+            ></div>
           </div>
         </div>
         <div className="chicken-legs">
@@ -389,6 +408,128 @@ export default function Food() {
               <div className="bucket-line"></div>
               <div className="bucket-line"></div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="food-middle-left">
+        <div className={`${bucket ? "bucket-div" : "bucket-div-closed"}`}>
+          <div className="bucket-top"></div>
+          <div className="bucket-bottom">
+            <div className="bucket-line"></div>
+            <div className="bucket-line"></div>
+          </div>
+        </div>
+      </div>
+      <div className="food-middle-right">
+        <div
+          className={`${umbrella ? "handle-div" : "handle-div-closed"}`}
+        ></div>
+      </div>
+      <div className="food-bottom-left">
+        <div className={`${ants ? "ant-div" : "ant-div-closed"}`}>
+          <div className="ant-div-top">
+            <div className="ant-one">
+              <div className="ant-pincers"></div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+            </div>
+            <div className="ant-two">
+              <div className="ant-pincers"></div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+            </div>
+          </div>
+          <div className="ant-div-bottom">
+            <div className="ant-three">
+              <div className="ant-pincers"></div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+            </div>
+            <div className="ant-four">
+              <div className="ant-pincers"></div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+              <div className="ant-segment">
+                <div className="ant-leg"></div>
+                <div className="ant-body"></div>
+                <div className="ant-leg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="food-bottom-right">
+        <div className={`${cake ? "cake" : "cake-closed"}`}>
+          <div className="cake-candle-div">
+            <div className="cake-candle-one-div">
+              <div className="candle-one-wick"></div>
+              <div className="candle-one-main"></div>
+            </div>
+            <div className="cake-candle-two-div">
+              <div className="candle-two-wick"></div>
+              <div className="candle-two-main"></div>
+            </div>
+            <div className="cake-candle-three-div">
+              <div className="candle-three-wick"></div>
+              <div className="candle-three-main"></div>
+            </div>
+          </div>
+          <div className="cake-top"></div>
+          <div className="cake-middle"></div>
+          <div className="cake-bottom"></div>
+        </div>
+        <div className="table-div">
+          <div className="table-top"></div>
+          <div className="table-legs">
+            <div className="table-leg"></div>
+            <div className="table-leg"></div>
           </div>
         </div>
       </div>
