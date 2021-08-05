@@ -213,7 +213,6 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-evenly;
-        
 
         .sucker {
           width: 50%;
@@ -2291,4 +2290,24 @@
       }
     }
   }
+}
+
+.food-card {
+  @include flex(space-evenly);
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  text-align: center;
+  z-index: 3;
+
+  .food-card-text {
+    width: 90%;
+  }
+
+  .food-card-button {
+  }
+}
+
+.food-card-closed {
+  display: none;
 }

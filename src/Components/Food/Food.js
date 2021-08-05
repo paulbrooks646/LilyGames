@@ -1,31 +1,115 @@
 import React, { useState } from "react";
 import "./Food.scss";
 import { Link } from "react-router-dom";
+import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import House from "../House/House";
 
 export default function Food() {
-  const [bucket, setBucket] = useState(true);
-  const [cake, setCake] = useState(true);
-  const [umbrella, setUmbrella] = useState(true);
-  const [ants, setAnts] = useState(true);
+  const [bucket, setBucket] = useState(false);
+  const [cake, setCake] = useState(false);
+  const [umbrella, setUmbrella] = useState(false);
+  const [ants, setAnts] = useState(false);
   const [finished, setFinished] = useState(false);
-  const [current, setCurrent] = useState("")
+  const [current, setCurrent] = useState("cake");
+  const [task, setTask] = useState("blah")
+  const [rejectionCard, setRejectionCard] = useState(false)
+  const [introductionCard, setIntroductionCard] = useState(false)
+  const [treatCard, setTreatCard] = useState(false)
+  const [treatrejectionCard, setTreatRejectionCard] = useState(false)
+  const [ladderCard, setLadderCard] = useState(false)
+  const [ladderRejectionCard, setLadderRejectionCard] = useState(false)
+  const [umbrellaCard, setUmbrellaCard] = useState(false)
+  const [umbrellaRejectionCard, setUmbrellaRejectionCard] = useState(false)
+  const [scratcherCard, setScratcherCard] = useState(false)
+  const [scratcherRejectionCard, setScratcherRejectionCard] = useState(false)
+  const [lotionCard, setLotionCard] = useState(false)
+  const [lotionRejectionCard, setLotionRejectionCard] = useState(false)
+  const [handleCard, setHandleCard] = useState(false)
+  const [cakeCard, setCakeCard] = useState(false)
+  const [bucketCard, setBucketCard] = useState(false)
+  const [antsCard, setAntsCard] = useState(false)
 
   const toggleStartOver = () => {
-    setBucket(false)
-    setCake(false)
-    setUmbrella(false)
-    setAnts(false)
-    setFinished(false)
-    setCurrent("")
+    setBucket(false);
+    setCake(false);
+    setUmbrella(false);
+    setAnts(false);
+    setFinished(false);
+    setCurrent("");
   };
-  const toggleLadder = () => {};
-  const toggleTreats = () => {};
-  const togglescratcher = () => {};
-  const toggleumbrella = () => {};
-  const toggleLotion = () => {};
+  const toggleLadder = () => {
+    if (current === "") {
+      setRejectionCard(true)
+    } else if (current !== "cake") {
+      setLadderRejectionCard(true)
+    } else {
+      setLadderCard(true)
+      setCake(true)
+    }
+  };
+  const toggleTreats = () => {
+    if (current === "") {
+      setRejectionCard(true)
+    } else if (cake === true && umbrella === true && bucket === true && ants === true) {
+      setTreatCard(true)
+      setFinished(true)
+    } else {
+      setTreatRejectionCard(true)
+
+    }
+  };
+  const toggleScratcher = () => {
+    if (current === "") {
+      setRejectionCard(true)
+    } else if (current !== "ants") {
+      setScratcherRejectionCard(true)
+    } else {
+      setScratcherCard(true)
+      setAnts(true)
+    }
+  };
+  const toggleUmbrella = () => {
+    if (current === "") {
+      setRejectionCard(true)
+    } else if (current !== "umbrella") {
+      setUmbrellaRejectionCard(true)
+    } else {
+      setUmbrellaCard(true)
+      setUmbrella(true)
+    }
+  };
+  const toggleLotion = () => {
+    if (current === "") {
+      setRejectionCard(true)
+    } else if (current !== "bucket") {
+      setLotionRejectionCard(true)
+    } else {
+      setLotionCard(true)
+      setBucket(true)
+    }
+  };
+  const toggleCake = () => {
+    setCakeCard(true)
+    setCurrent("cake")
+    setTask(" you reach the cake.")
+  };
+  const toggleHandle = () => {
+    setHandleCard(true)
+    setCurrent("umbrella")
+    setTask("protect the Big Red Chicken from rain.")
+  };
+  const toggleAnts = () => {
+    setAntsCard(true)
+    setCurrent("ants")
+    setTask("get rid of the tickle ants and scratch his tickly itch.")
+  };
+  const toggleBucket = () => {
+    setBucketCard(true)
+    setCurrent("bucket")
+    setTask("the bucket slip off of his foot.")
+  };
 
   return (
     <div className="main">
@@ -67,7 +151,7 @@ export default function Food() {
           </div>
           <div
             className={`${ants ? "scratcher-div-closed" : "scratcher-div"}`}
-            onClick={togglescratcher}
+            onClick={toggleScratcher}
           >
             <div className="scratcher">
               <div className="scratcher-top">
@@ -85,7 +169,7 @@ export default function Food() {
           </div>
           <div
             className={`${umbrella ? "umbrella-div-closed" : "umbrella-div"}`}
-            onClick={toggleumbrella}
+            onClick={toggleUmbrella}
           >
             <div className="umbrella">
               <div className="umbrella-top"></div>
@@ -216,7 +300,10 @@ export default function Food() {
         <div
           className={`${cake ? "chicken-hair" : "chicken-hair-closed"}`}
         ></div>
-        <div className={`${cake ? "cake-closed" : "cake"}`}>
+        <div
+          className={`${cake ? "cake-closed" : "cake"}`}
+          onClick={toggleCake}
+        >
           <div className="cake-candle-div">
             <div className="cake-candle-one-div">
               <div className="candle-one-wick"></div>
@@ -286,7 +373,10 @@ export default function Food() {
                 <div className="chicken-body-middle-frill-seven"></div>
                 <div className="chicken-body-middle-frill-eight"></div>
               </div>
-              <div className={`${ants ? "ant-div-closed" : "ant-div"}`}>
+              <div
+                className={`${ants ? "ant-div-closed" : "ant-div"}`}
+                onClick={toggleAnts}
+              >
                 <div className="ant-div-top">
                   <div className="ant-one">
                     <div className="ant-pincers"></div>
@@ -373,6 +463,7 @@ export default function Food() {
             <div className="chicken-finger-four"></div>
             <div
               className={`${umbrella ? "umbrella-div" : "umbrella-div-closed"}`}
+              onClick={toggleHandle}
             >
               <div className="umbrella">
                 <div className="umbrella-top"></div>
@@ -402,7 +493,10 @@ export default function Food() {
               <div className="chicken-toe-four"></div>
             </div>
           </div>
-          <div className={`${bucket ? "bucket-div-closed" : "bucket-div"}`}>
+          <div
+            className={`${bucket ? "bucket-div-closed" : "bucket-div"}`}
+            onClick={toggleBucket}
+          >
             <div className="bucket-top"></div>
             <div className="bucket-bottom">
               <div className="bucket-line"></div>
@@ -533,6 +627,93 @@ export default function Food() {
           </div>
         </div>
       </div>
+      <Card
+        className={`${introductionCard ? "food-card" : "food-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="food-card-text">
+          "Bawk bawk!" The Big Red Chicken needs your help. He can't find the
+          cake, there are tickle ants all over him, there is a bucket stuck on
+          his foot and his umbrella is broken.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setIntroductionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${cakeCard ? "food-card" : "food-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="food-card-text">
+          There's a cake on the Big Red Chicken's head but it is too high for
+          you to reach. Is there anything in your backpack that could help you
+          reach up high?
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setCakeCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${umbrellaCard ? "food-card" : "food-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="food-card-text">
+          The Big Red Chicken's umbrella is broken. Is there anything in your
+          backpack that could protect him from rain?
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setUmbrellaCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${bucketCard ? "food-card" : "food-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="food-card-text">
+          The Big Red Chicken's foot is stuck in a bucket. Is there anything in
+          your backpack that could help him slip out?
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setBucketCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${antsCard ? "food-card" : "food-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="food-card-text">
+          There are tickle ants on the Big Red Chicken. Is there anything in
+          your backpack that could help scratch his tickly itch?
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setAntsCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${scratcherRejectionCard ? "food-card" : "food-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="food-card-text">
+          The scratcher won't help you {task}
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="food-card-button"
+          onClick={() => setScratcherRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
     </div>
   );
 }
