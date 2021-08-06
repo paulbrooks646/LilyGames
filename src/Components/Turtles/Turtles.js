@@ -187,9 +187,9 @@ if (!currentTurtle) {
           </div>
         </div>
         <div className="turtles-button-div">
-          <Link to="/Food">
+          <Link to="/Bawk">
             <Button color="primary" variant="contained">
-              FOOD
+              Bawk
             </Button>
           </Link>
           <Button color="secondary" variant="contained" onClick={toggleStartOver}>

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
-import "./Food.scss";
+import "./Bawk.scss";
 import { Link } from "react-router-dom";
-import Card from "@material-ui/core/Card"
+import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import House from "../House/House";
 
-export default function Food() {
+export default function Bawk() {
   const [bucket, setBucket] = useState(false);
   const [cake, setCake] = useState(false);
   const [umbrella, setUmbrella] = useState(false);
   const [ants, setAnts] = useState(false);
   const [finished, setFinished] = useState(false);
-  const [current, setCurrent] = useState("cake");
-  const [task, setTask] = useState("blah")
-  const [rejectionCard, setRejectionCard] = useState(false)
-  const [introductionCard, setIntroductionCard] = useState(false)
-  const [treatCard, setTreatCard] = useState(false)
-  const [treatrejectionCard, setTreatRejectionCard] = useState(false)
-  const [ladderCard, setLadderCard] = useState(false)
-  const [ladderRejectionCard, setLadderRejectionCard] = useState(false)
-  const [umbrellaCard, setUmbrellaCard] = useState(false)
-  const [umbrellaRejectionCard, setUmbrellaRejectionCard] = useState(false)
-  const [scratcherCard, setScratcherCard] = useState(false)
-  const [scratcherRejectionCard, setScratcherRejectionCard] = useState(false)
-  const [lotionCard, setLotionCard] = useState(false)
-  const [lotionRejectionCard, setLotionRejectionCard] = useState(false)
-  const [handleCard, setHandleCard] = useState(false)
-  const [cakeCard, setCakeCard] = useState(false)
-  const [bucketCard, setBucketCard] = useState(false)
-  const [antsCard, setAntsCard] = useState(false)
+  const [current, setCurrent] = useState("");
+  const [task, setTask] = useState("");
+  const [rejectionCard, setRejectionCard] = useState(false);
+  const [introductionCard, setIntroductionCard] = useState(true);
+  const [treatCard, setTreatCard] = useState(false);
+  const [treatRejectionCard, setTreatRejectionCard] = useState(false);
+  const [ladderCard, setLadderCard] = useState(false);
+  const [ladderRejectionCard, setLadderRejectionCard] = useState(false);
+  const [umbrellaCard, setUmbrellaCard] = useState(false);
+  const [umbrellaRejectionCard, setUmbrellaRejectionCard] = useState(false);
+  const [scratcherCard, setScratcherCard] = useState(false);
+  const [scratcherRejectionCard, setScratcherRejectionCard] = useState(false);
+  const [lotionCard, setLotionCard] = useState(false);
+  const [lotionRejectionCard, setLotionRejectionCard] = useState(false);
+  const [handleCard, setHandleCard] = useState(false);
+  const [cakeCard, setCakeCard] = useState(false);
+  const [bucketCard, setBucketCard] = useState(false);
+  const [antsCard, setAntsCard] = useState(false);
 
   const toggleStartOver = () => {
     setBucket(false);
@@ -38,84 +38,100 @@ export default function Food() {
     setAnts(false);
     setFinished(false);
     setCurrent("");
+    setTask("");
+    setIntroductionCard(true);
   };
   const toggleLadder = () => {
     if (current === "") {
-      setRejectionCard(true)
+      setRejectionCard(true);
     } else if (current !== "cake") {
-      setLadderRejectionCard(true)
+      setLadderRejectionCard(true);
     } else {
-      setLadderCard(true)
-      setCake(true)
+      setLadderCard(true);
+      setCake(true);
+      setCurrent("");
+      setTask("");
     }
   };
   const toggleTreats = () => {
-    if (current === "") {
-      setRejectionCard(true)
-    } else if (cake === true && umbrella === true && bucket === true && ants === true) {
-      setTreatCard(true)
-      setFinished(true)
+     if (
+      cake &&
+      umbrella &&
+      bucket &&
+      ants
+    ) {
+      setTreatCard(true);
+      setFinished(true);
+      setCurrent("");
+      setTask("");
+    } else if (current === "") {
+      setRejectionCard(true);
     } else {
-      setTreatRejectionCard(true)
-
+      setTreatRejectionCard(true);
     }
   };
   const toggleScratcher = () => {
     if (current === "") {
-      setRejectionCard(true)
+      setRejectionCard(true);
     } else if (current !== "ants") {
-      setScratcherRejectionCard(true)
+      setScratcherRejectionCard(true);
     } else {
-      setScratcherCard(true)
-      setAnts(true)
+      setScratcherCard(true);
+      setAnts(true);
+      setCurrent("");
+      setTask("");
     }
   };
   const toggleUmbrella = () => {
     if (current === "") {
-      setRejectionCard(true)
+      setRejectionCard(true);
     } else if (current !== "umbrella") {
-      setUmbrellaRejectionCard(true)
+      setUmbrellaRejectionCard(true);
     } else {
-      setUmbrellaCard(true)
-      setUmbrella(true)
+      setUmbrellaCard(true);
+      setUmbrella(true);
+      setCurrent("");
+      setTask("");
     }
   };
   const toggleLotion = () => {
     if (current === "") {
-      setRejectionCard(true)
+      setRejectionCard(true);
     } else if (current !== "bucket") {
-      setLotionRejectionCard(true)
+      setLotionRejectionCard(true);
     } else {
-      setLotionCard(true)
-      setBucket(true)
+      setLotionCard(true);
+      setBucket(true);
+      setCurrent("");
+      setTask("");
     }
   };
   const toggleCake = () => {
-    setCakeCard(true)
-    setCurrent("cake")
-    setTask(" you reach the cake.")
+    setCakeCard(true);
+    setCurrent("cake");
+    setTask("reach the cake.");
   };
   const toggleHandle = () => {
-    setHandleCard(true)
-    setCurrent("umbrella")
-    setTask("protect the Big Red Chicken from rain.")
+    setHandleCard(true);
+    setCurrent("umbrella");
+    setTask("protect the Big Red Chicken from rain.");
   };
   const toggleAnts = () => {
-    setAntsCard(true)
-    setCurrent("ants")
-    setTask("get rid of the tickle ants and scratch his tickly itch.")
+    setAntsCard(true);
+    setCurrent("ants");
+    setTask("get rid of the tickle ants and scratch his tickly itch.");
   };
   const toggleBucket = () => {
-    setBucketCard(true)
-    setCurrent("bucket")
-    setTask("the bucket slip off of his foot.")
+    setBucketCard(true);
+    setCurrent("bucket");
+    setTask("slip the bucket off his foot.");
   };
 
   return (
     <div className="main">
-      <nav className="food-nav">
-        <div className="food-current">
-          <Typography variant="h6" color="primary" className="food-nav-text">
+      <nav className="Bawk-nav">
+        <div className="Bawk-current">
+          <Typography variant="h6" color="primary" className="Bawk-nav-text">
             BACKPACK CONTAINS:
           </Typography>
           <div
@@ -280,7 +296,7 @@ export default function Food() {
             </Typography>
           </div>
         </div>
-        <div className="food-button-div">
+        <div className="Bawk-button-div">
           <Link to="/Turtles">
             <Button color="primary" variant="contained">
               Naps
@@ -463,7 +479,6 @@ export default function Food() {
             <div className="chicken-finger-four"></div>
             <div
               className={`${umbrella ? "umbrella-div" : "umbrella-div-closed"}`}
-              onClick={toggleHandle}
             >
               <div className="umbrella">
                 <div className="umbrella-top"></div>
@@ -473,6 +488,7 @@ export default function Food() {
             </div>
             <div
               className={`${umbrella ? "handle-div-closed" : "handle-div"}`}
+              onClick={toggleHandle}
             ></div>
           </div>
         </div>
@@ -505,7 +521,7 @@ export default function Food() {
           </div>
         </div>
       </div>
-      <div className="food-middle-left">
+      <div className="Bawk-middle-left">
         <div className={`${bucket ? "bucket-div" : "bucket-div-closed"}`}>
           <div className="bucket-top"></div>
           <div className="bucket-bottom">
@@ -514,12 +530,12 @@ export default function Food() {
           </div>
         </div>
       </div>
-      <div className="food-middle-right">
+      <div className="Bawk-middle-right">
         <div
           className={`${umbrella ? "handle-div" : "handle-div-closed"}`}
         ></div>
       </div>
-      <div className="food-bottom-left">
+      <div className="Bawk-bottom-left">
         <div className={`${ants ? "ant-div" : "ant-div-closed"}`}>
           <div className="ant-div-top">
             <div className="ant-one">
@@ -599,7 +615,7 @@ export default function Food() {
           </div>
         </div>
       </div>
-      <div className="food-bottom-right">
+      <div className="Bawk-bottom-right">
         <div className={`${cake ? "cake" : "cake-closed"}`}>
           <div className="cake-candle-div">
             <div className="cake-candle-one-div">
@@ -628,9 +644,9 @@ export default function Food() {
         </div>
       </div>
       <Card
-        className={`${introductionCard ? "food-card" : "food-card-closed"}`}
+        className={`${introductionCard ? "Bawk-card" : "Bawk-card-closed"}`}
       >
-        <Typography variant="h4" color="primary" className="food-card-text">
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
           "Bawk bawk!" The Big Red Chicken needs your help. He can't find the
           cake, there are tickle ants all over him, there is a bucket stuck on
           his foot and his umbrella is broken.
@@ -638,14 +654,14 @@ export default function Food() {
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setIntroductionCard(false)}
         >
           CLOSE
         </Button>
       </Card>
-      <Card className={`${cakeCard ? "food-card" : "food-card-closed"}`}>
-        <Typography variant="h4" color="primary" className="food-card-text">
+      <Card className={`${cakeCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
           There's a cake on the Big Red Chicken's head but it is too high for
           you to reach. Is there anything in your backpack that could help you
           reach up high?
@@ -653,63 +669,214 @@ export default function Food() {
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setCakeCard(false)}
         >
           CLOSE
         </Button>
       </Card>
-      <Card className={`${umbrellaCard ? "food-card" : "food-card-closed"}`}>
-        <Typography variant="h4" color="primary" className="food-card-text">
-          The Big Red Chicken's umbrella is broken. Is there anything in your
-          backpack that could protect him from rain?
+      <Card className={`${umbrellaCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          You give the Big Red Chicken a new umbrella. Now she will be safe from
+          the rain.
         </Typography>
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setUmbrellaCard(false)}
         >
           CLOSE
         </Button>
       </Card>
-      <Card className={`${bucketCard ? "food-card" : "food-card-closed"}`}>
-        <Typography variant="h4" color="primary" className="food-card-text">
+      <Card className={`${bucketCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
           The Big Red Chicken's foot is stuck in a bucket. Is there anything in
           your backpack that could help him slip out?
         </Typography>
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setBucketCard(false)}
         >
           CLOSE
         </Button>
       </Card>
-      <Card className={`${antsCard ? "food-card" : "food-card-closed"}`}>
-        <Typography variant="h4" color="primary" className="food-card-text">
+      <Card className={`${antsCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
           There are tickle ants on the Big Red Chicken. Is there anything in
           your backpack that could help scratch his tickly itch?
         </Typography>
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setAntsCard(false)}
         >
           CLOSE
         </Button>
       </Card>
-      <Card className={`${scratcherRejectionCard ? "food-card" : "food-card-closed"}`}>
-        <Typography variant="h4" color="primary" className="food-card-text">
+      <Card
+        className={`${
+          scratcherRejectionCard ? "Bawk-card" : "Bawk-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
           The scratcher won't help you {task}
         </Typography>
         <Button
           color="secondary"
           variant="contained"
-          className="food-card-button"
+          className="Bawk-card-button"
           onClick={() => setScratcherRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${scratcherCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          You gently move the tickle ants to the floor then you scratch the Big
+          Red Chicken's tickly itch.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setScratcherCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${
+          umbrellaRejectionCard ? "Bawk-card" : "Bawk-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The umbrella won't help you {task}
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setUmbrellaRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${ladderRejectionCard ? "Bawk-card" : "Bawk-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The ladder won't help you {task}
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setLadderRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${lotionRejectionCard ? "Bawk-card" : "Bawk-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The lotion won't help you {task}
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setLotionRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card
+        className={`${treatRejectionCard ? "Bawk-card" : "Bawk-card-closed"}`}
+      >
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The treats won't help you {task}
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setTreatRejectionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${treatCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The Big Red Chicken was such a good patient that you give him a sucker
+          and a sticker with a chicken on it. Now the Big Red Chicken will be
+          ready for Lily's party.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setTreatCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${ladderCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          You use the ladder to climb up and take the cake off the Big Red
+          Chicken's head. You put it safely on the table.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setLadderCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${lotionCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          You put slippery lotion on the Big Red Chicken's foot. When you pull,
+          the bucket slides right off.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setLotionCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${handleCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          The Big Red Chicken's umbrella is broken. Is there anything in your
+          backpack that could protect him from rain?
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setHandleCard(false)}
+        >
+          CLOSE
+        </Button>
+      </Card>
+      <Card className={`${rejectionCard ? "Bawk-card" : "Bawk-card-closed"}`}>
+        <Typography variant="h4" color="primary" className="Bawk-card-text">
+          Before you try to use anything from backpack, click on which of the
+          Big Red Chicken's problems you want to help solve.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          className="Bawk-card-button"
+          onClick={() => setRejectionCard(false)}
         >
           CLOSE
         </Button>

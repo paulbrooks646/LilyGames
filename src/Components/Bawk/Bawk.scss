@@ -4,18 +4,18 @@
   position: relative;
 }
 
-.food-nav {
+.Bawk-nav {
   height: 10vh;
   width: 100vw;
   @include center(space-between);
   background-color: darkgray;
 
-  .food-current {
+  .Bawk-current {
     display: flex;
     align-items: center;
     height: 100%;
 
-    .food-nav-text {
+    .Bawk-nav-text {
       position: relative;
       margin-right: 10px;
       margin-left: 10px;
@@ -900,7 +900,7 @@
     }
   }
 
-  .food-button-div {
+  .Bawk-button-div {
     @include center(space-evenly);
     width: 25%;
   }
@@ -1686,6 +1686,7 @@
         right: 85px;
         bottom: 0px;
         cursor: pointer;
+        
       }
       .handle-div-closed {
         display: none;
@@ -1907,7 +1908,7 @@
   }
 }
 
-.food-middle-left {
+.Bawk-middle-left {
   @include flex(flex-end);
   position: absolute;
   left: 0px;
@@ -1953,7 +1954,7 @@
   }
 }
 
-.food-middle-right {
+.Bawk-middle-right {
   @include flex(center);
   position: absolute;
   right: 0px;
@@ -1975,7 +1976,7 @@
   }
 }
 
-.food-bottom-left {
+.Bawk-bottom-left {
   @include flex(center);
   position: absolute;
   left: 0px;
@@ -2117,7 +2118,7 @@
   }
 }
 
-.food-bottom-right {
+.Bawk-bottom-right {
   @include flex(flex-end);
   position: absolute;
   bottom: 0px;
@@ -2292,7 +2293,7 @@
   }
 }
 
-.food-card {
+.Bawk-card {
   @include flex(space-evenly);
   position: absolute;
   height: 400px;
@@ -2300,14 +2301,14 @@
   text-align: center;
   z-index: 3;
 
-  .food-card-text {
+  .Bawk-card-text {
     width: 90%;
   }
 
-  .food-card-button {
+  .Bawk-card-button {
   }
 }
 
-.food-card-closed {
+.Bawk-card-closed {
   display: none;
 }
