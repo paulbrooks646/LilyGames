@@ -191,3 +191,226 @@
     }
   }
 }
+
+.food-bottom-left {
+  @include flex(center);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 30vw;
+  height: 27.5vh;
+
+  .bowl-div {
+    .bowl {
+      @include flex(center);
+      height: 100px;
+      width: 100px;
+      background-color: orchid;
+      border-radius: 50%;
+
+      .inner-bowl {
+        @include flex(center);
+        height: 90%;
+        width: 90%;
+        background-color: orchid;
+        border: solid 0.5px;
+        border-radius: 50%;
+
+        .bowl-row-one {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+        .bowl-row-two {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 100%;
+        }
+        .bowl-row-three {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+        .bowl-row-four {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 100%;
+        }
+        .bowl-row-five {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+        .mnm-red {
+          height: 15px;
+          width: 15px;
+          background-color: red;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnm-yellow {
+          height: 15px;
+          width: 15px;
+          background-color: yellow;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnm-blue {
+          height: 15px;
+          width: 15px;
+          background-color: dodgerblue;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnm-green {
+          height: 15px;
+          width: 15px;
+          background-color: green;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnm-orange {
+          height: 15px;
+          width: 15px;
+          background-color: orange;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnm-brown {
+          height: 15px;
+          width: 15px;
+          background-color: brown;
+          border-radius: 50%;
+          @include flex(center);
+        }
+        .mnmm {
+          position: relative;
+          bottom: 2px;
+        }
+      }
+    }
+  }
+}
+
+.food-bottom-middle {
+  @include flex(center);
+  position: absolute;
+  bottom: 0px;
+  left: 30vw;
+  height: 27.5vh;
+  width: 40vw;
+
+  .nut-div {
+    .nut {
+      @include flex(center);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: lightgoldenrodyellow;
+      border: solid 0.5px;
+
+      .nut-stem {
+        height: 10px;
+        width: 5px;
+        background-color: brown;
+      }
+      .nut-top {
+        width: 50px;
+        height: 20px;
+        border-radius: 50% 50% 0% 0%;
+        background-color: rgb(189, 91, 22);
+      }
+      .nut-bottom {
+        width: 40px;
+        height: 40px;
+        background-color: peru;
+        border-radius: 0% 0% 50% 50%;
+      }
+    }
+  }
+}
+
+.food-bottom-right {
+  @include flex(center);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 27.5vh;
+  width: 30vw;
+
+  .banana-div {
+      @include flex(center);
+
+    .banana-top {
+        height: 20px;
+        width: 25px;
+        background-color: black;
+        background-image: linear-gradient(black 50%, yellow 100%);
+        position: relative;
+        left: 10px;
+        z-index: 1;
+        transform: rotate(-30deg);
+
+    }
+    .bananas {
+      display: flex;
+
+      .banana-line {
+        height: 100px;
+        width: 70px;
+        border-right: solid 2px; 
+        border-radius: 50%;
+        transform: rotate(60deg);
+        position:  relative;
+        left: 136px;
+        bottom: 24px;
+        z-index: 2;
+
+      }
+
+      .banana-one {
+        height: 100px;
+        width: 70px;
+        border-right: 22px solid yellow;
+        position: relative;
+        transform: rotate(60deg);
+        left: 66.5px;
+        bottom: 26.25px;
+        border-radius: 50%;
+      }
+      .banana-two {
+        height: 100px;
+        width: 70px;
+        border-radius: 50%;
+        border-right: 22px solid yellow;
+        position: relative;
+        left: 25px;
+        transform: rotate(15deg);
+      }
+      .banana-three {
+        height: 100px;
+        width: 70px;
+        border-radius: 50%;
+        border-right: 22px solid yellow;
+        position: relative;
+        right: 15px;
+        transform: rotate(-20deg);
+      }
+      .banana-four {
+        height: 100px;
+        width: 70px;
+        border-radius: 50%;
+        border-right: 22px solid yellow;
+        transform: rotate(-60deg);
+        position: relative;
+        bottom: 20px;
+        right: 58px;
+      }
+    }
+  }
+}

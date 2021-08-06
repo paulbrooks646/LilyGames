@@ -71,9 +71,102 @@ export default function Food() {
           </div>
         </div>
       </div>
-      <div className="food-bottom-left"></div>
-      <div className="food-bottom-middle"></div>
-      <div className="food-bottom-right"></div>
+      <div className="food-bottom-left">
+        <div className="bowl-div">
+          <div className="bowl">
+            <div className="inner-bowl">
+              <div className="bowl-row-one">
+                <div className="mnm-red">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-yellow">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-blue">
+                  <p className="mnmm">m</p>
+                </div>
+              </div>
+              <div className="bowl-row-two">
+                <div className="mnm-green">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-orange">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-brown">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-red">
+                  <p className="mnmm">m</p>
+                </div>
+              </div>
+              <div className="bowl-row-three">
+                <div className="mnm-yellow">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-blue">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-green">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-orange">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-brown">
+                  <p className="mnmm">m</p>
+                </div>
+              </div>
+              <div className="bowl-row-four">
+                <div className="mnm-red">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-yellow">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-blue">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-green">
+                  <p className="mnmm">m</p>
+                </div>
+              </div>
+              <div className="bowl-row-five">
+                <div className="mnm-orange">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-brown">
+                  <p className="mnmm">m</p>
+                </div>
+                <div className="mnm-red">
+                  <p className="mnmm">m</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="food-bottom-middle">
+        <div className="nut-div">
+          <div className="nut">
+            <div className="nut-stem"></div>
+            <div className="nut-top"></div>
+            <div className="nut-bottom"></div>
+          </div>
+        </div>
+      </div>
+      <div className="food-bottom-right">
+              <div className="banana-div">
+                  <div className="banana-top"></div>
+                  <div className="bananas">
+                      <div className="banana-line"></div>
+            <div className="banana-one"></div>
+            <div className="banana-two"></div>
+            <div className="banana-three"></div>
+            <div className="banana-four"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
