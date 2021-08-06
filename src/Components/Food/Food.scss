@@ -1,0 +1,193 @@
+@import "../mixins";
+
+.food-nav {
+  height: 10vh;
+  width: 100%;
+  background-color: darkgray;
+}
+
+.food-middle-left {
+  @include flex(center);
+  position: absolute;
+  left: 0px;
+  bottom: 27.5vh;
+  height: 27.5vh;
+  width: 30vw;
+
+  .bone-div {
+    .bone {
+      display: flex;
+      align-items: center;
+
+      .bone-left {
+        position: relative;
+        left: 12px;
+        .bone-top-corner {
+          height: 20px;
+          width: 20px;
+          background-color: white;
+          border-radius: 50%;
+          position: relative;
+        }
+        .bone-bottom-corner {
+          height: 20px;
+          width: 20px;
+          background-color: white;
+          border-radius: 50%;
+          position: relative;
+        }
+      }
+      .bone-middle {
+        width: 50px;
+        height: 20px;
+        background-color: white;
+      }
+      .bone-right {
+        position: relative;
+        right: 12px;
+        .bone-top-corner {
+          height: 20px;
+          width: 20px;
+          background-color: white;
+          border-radius: 50%;
+          position: relative;
+        }
+        .bone-bottom-corner {
+          height: 20px;
+          width: 20px;
+          background-color: white;
+          border-radius: 50%;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+.food-middle-middle {
+  @include flex(center);
+  position: absolute;
+  left: 30vw;
+  bottom: 27.5vh;
+  height: 27.5vh;
+  width: 40vw;
+
+  .pizza {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(253, 253, 190);
+    border: solid peru 8px;
+    @include flex(space-evenly);
+
+    .pizza-horizontal-line {
+      position: absolute;
+      width: 120%;
+      height: 1%;
+      top: 49.5%;
+      right: -10%;
+      background-color: black;
+    }
+
+    .pizza-vertical-line {
+      position: absolute;
+      height: 120%;
+      width: 1px;
+      left: 49.5%;
+      top: -10%;
+      background-color: black;
+    }
+
+    .pepperoni-outer {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 65%;
+
+      .pepperoni {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+
+    .pepperoni-innner {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+
+      .pepperoni {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.food-middle-right {
+  @include flex(center);
+  position: absolute;
+  right: 0px;
+  bottom: 27.5vh;
+  height: 27.5vh;
+  width: 30vw;
+
+  .corn-div {
+    .corn {
+      height: 200px;
+      width: 50px;
+      border-radius: 50% 50% 25% 25%;
+      background-image: linear-gradient(
+        yellow 9%,
+        black 9%,
+        black 10%,
+        yellow 10%,
+        yellow 19%,
+        black 19%,
+        black 20%,
+        yellow 20%,
+        yellow 29%,
+        black 29%,
+        black 30%,
+        yellow 30%,
+        yellow 39%,
+        black 39%,
+        black 40%,
+        yellow 40%,
+        yellow 49%,
+        black 49%,
+        black 50%,
+        yellow 50%,
+        yellow 59%,
+        black 59%,
+        black 60%,
+        yellow 60%,
+        yellow 69%,
+        black 69%,
+        black 70%,
+        yellow 70%,
+        yellow 79%,
+        black 79%,
+        black 80%,
+        yellow 80%,
+        yellow 89%,
+        black 89%,
+        black 90%,
+        yellow 90%
+      );
+      display: flex;
+      justify-content: space-evenly;
+      overflow: hidden;
+
+      .corn-line {
+        height: 100%;
+        width: 1px;
+        background-color: black;
+      }
+    }
+  }
+}
