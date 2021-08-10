@@ -6,6 +6,567 @@
   background-color: darkgray;
 }
 
+.food-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 35vh;
+  width: 100%;
+  background-color: darkgray;
+  left: 0px;
+  top: 10vh;
+
+  .food-shelf {
+    display: flex;
+
+    .food-shelf-left {
+      height: 240px;
+      width: 15px;
+      background-color: chocolate;
+    }
+
+    .food-shelf-middle {
+      @include flex(space-between);
+
+      .food-shelf-board {
+        width: 240px;
+        height: 15px;
+        background-color: chocolate;
+      }
+      .food-shelf-space {
+        width: 240px;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+
+        .bone-div {
+          cursor: pointer;
+
+          .bone {
+            display: flex;
+            align-items: center;
+
+            .bone-left {
+              position: relative;
+              left: 12px;
+              .bone-top-corner {
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                border-radius: 50%;
+                position: relative;
+              }
+              .bone-bottom-corner {
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                border-radius: 50%;
+                position: relative;
+              }
+            }
+            .bone-middle {
+              width: 50px;
+              height: 20px;
+              background-color: white;
+            }
+            .bone-right {
+              position: relative;
+              right: 12px;
+              .bone-top-corner {
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                border-radius: 50%;
+                position: relative;
+              }
+              .bone-bottom-corner {
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                border-radius: 50%;
+                position: relative;
+              }
+            }
+          }
+        }
+        .bone-div-closed {
+          display: none;
+        }
+        .pizza {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          background-color: rgb(253, 253, 190);
+          border: solid peru 8px;
+          @include flex(space-evenly);
+          cursor: pointer;
+          transform: scale(0.6);
+          position: relative;
+          top: 20px;
+
+          .pizza-horizontal-line {
+            position: absolute;
+            width: 120%;
+            height: 1%;
+            top: 49.5%;
+            right: -10%;
+            background-color: black;
+          }
+
+          .pizza-vertical-line {
+            position: absolute;
+            height: 120%;
+            width: 1px;
+            left: 49.5%;
+            top: -10%;
+            background-color: black;
+          }
+
+          .pepperoni-outer {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 65%;
+
+            .pepperoni {
+              height: 15px;
+              width: 15px;
+              border-radius: 50%;
+              background-color: red;
+            }
+          }
+
+          .pepperoni-innner {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+
+            .pepperoni {
+              height: 15px;
+              width: 15px;
+              border-radius: 50%;
+              background-color: red;
+            }
+          }
+        }
+        .pizza-div-closed {
+          display: none;
+        }
+        .corn-div {
+          transform: rotate(90deg);
+          position: relative;
+          top: 75px;
+          cursor: pointer;
+
+          .corn {
+            height: 200px;
+            width: 50px;
+            border-radius: 50% 50% 25% 25%;
+            background-image: linear-gradient(
+              yellow 9%,
+              black 9%,
+              black 10%,
+              yellow 10%,
+              yellow 19%,
+              black 19%,
+              black 20%,
+              yellow 20%,
+              yellow 29%,
+              black 29%,
+              black 30%,
+              yellow 30%,
+              yellow 39%,
+              black 39%,
+              black 40%,
+              yellow 40%,
+              yellow 49%,
+              black 49%,
+              black 50%,
+              yellow 50%,
+              yellow 59%,
+              black 59%,
+              black 60%,
+              yellow 60%,
+              yellow 69%,
+              black 69%,
+              black 70%,
+              yellow 70%,
+              yellow 79%,
+              black 79%,
+              black 80%,
+              yellow 80%,
+              yellow 89%,
+              black 89%,
+              black 90%,
+              yellow 90%
+            );
+            display: flex;
+            justify-content: space-evenly;
+            overflow: hidden;
+
+            .corn-line {
+              height: 100%;
+              width: 1px;
+              background-color: black;
+            }
+          }
+        }
+        .corn-div-closed {
+          display: none;
+        }
+        .bowl-div {
+          cursor: pointer;
+          transform: scale(0.6);
+          position: relative;
+          top: 20px;
+
+          .bowl {
+            @include flex(center);
+            height: 100px;
+            width: 100px;
+            background-color: orchid;
+            border-radius: 50%;
+
+            .inner-bowl {
+              @include flex(center);
+              height: 90%;
+              width: 90%;
+              background-color: orchid;
+              border: solid 0.5px;
+              border-radius: 50%;
+
+              .bowl-row-one {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+              }
+              .bowl-row-two {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+              }
+              .bowl-row-three {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+              }
+              .bowl-row-four {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+              }
+              .bowl-row-five {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+              }
+              .mnm-red {
+                height: 15px;
+                width: 15px;
+                background-color: red;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnm-yellow {
+                height: 15px;
+                width: 15px;
+                background-color: yellow;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnm-blue {
+                height: 15px;
+                width: 15px;
+                background-color: dodgerblue;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnm-green {
+                height: 15px;
+                width: 15px;
+                background-color: green;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnm-orange {
+                height: 15px;
+                width: 15px;
+                background-color: orange;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnm-brown {
+                height: 15px;
+                width: 15px;
+                background-color: brown;
+                border-radius: 50%;
+                @include flex(center);
+              }
+              .mnmm {
+                position: relative;
+                bottom: 2px;
+              }
+            }
+          }
+        }
+        .bowl-div-closed {
+          display: none;
+        }
+        .nut-div {
+          cursor: pointer;
+          transform: scale(0.6);
+          position: relative;
+          top: 20px;
+          .nut {
+            @include flex(center);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightgoldenrodyellow;
+            border: solid 0.5px;
+
+            .nut-stem {
+              height: 10px;
+              width: 5px;
+              background-color: brown;
+            }
+            .nut-top {
+              width: 50px;
+              height: 20px;
+              border-radius: 50% 50% 0% 0%;
+              background-color: rgb(189, 91, 22);
+            }
+            .nut-bottom {
+              width: 40px;
+              height: 40px;
+              background-color: peru;
+              border-radius: 0% 0% 50% 50%;
+            }
+          }
+        }
+        .nut-div-closed {
+          display: none;
+        }
+        .banana-div {
+          @include flex(center);
+          transform: scale(0.5);
+          top: 32px;
+          right: 21px;
+          cursor: pointer;
+
+          .banana-top {
+            height: 20px;
+            width: 25px;
+            background-color: black;
+            background-image: linear-gradient(black 50%, yellow 100%);
+            position: relative;
+            top: 2px;
+            left: 19px;
+            z-index: 1;
+            transform: rotate(0deg);
+          }
+          .bananas {
+            display: flex;
+
+            .banana-one {
+              height: 100px;
+              width: 70px;
+              border-right: 22px solid yellow;
+              position: relative;
+              transform: rotate(45deg);
+              left: 76px;
+              bottom: 16px;
+              border-radius: 50%;
+            }
+
+            .banana-two {
+              height: 100px;
+              width: 70px;
+              border-radius: 50%;
+              border-right: 22px solid yellow;
+              position: relative;
+              left: 25px;
+              transform: rotate(15deg);
+            }
+            .banana-three {
+              height: 100px;
+              width: 70px;
+              border-radius: 50%;
+              border-right: 22px solid yellow;
+              position: relative;
+              right: 23px;
+              transform: rotate(-10deg);
+            }
+            .banana-four {
+              height: 100px;
+              width: 70px;
+              border-radius: 50%;
+              border-right: 22px solid yellow;
+              transform: rotate(-30deg);
+              position: relative;
+              bottom: 5px;
+              right: 70px;
+            }
+          }
+        }
+        .banana-div-closed {
+          display: none;
+        }
+
+        .cheese-div {
+          transform: rotate(90deg);
+          position: relative;
+          top: 13px;
+          right: 70px;
+
+          .cheese {
+            background-image: linear-gradient(
+              60deg,
+              transparent 50%,
+              #ffff66 50%
+            );
+            height: 75px;
+            width: 50px;
+            display: flex;
+            cursor: pointer;
+
+            .cheese-top {
+              height: 100%;
+              width: 60%;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: flex-end;
+
+              .cheese-hole {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                border: solid 0.25px slategray;
+                position: relative;
+                top: 2px;
+                background-color: #ffff88;
+              }
+            }
+
+            .cheese-bottom {
+              height: 100%;
+              width: 40%;
+              @include flex(space-evenly);
+
+              .cheese-hole {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                border: solid 0.25px slategray;
+                position: relative;
+                bottom: 2px;
+                background-color: #ffff88;
+              }
+              .cheese-hole-two {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                border: solid 0.25px slategray;
+                position: relative;
+                bottom: 7px;
+                background-color: #ffff88;
+              }
+            }
+          }
+        }
+        .cheese-div-closed {
+          display: none;
+        }
+
+        .cookie-div {
+          .cookie {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(221, 149, 76);
+            border-radius: 50%;
+            @include flex(space-evenly);
+            cursor: pointer;
+
+            .cookie-top {
+              display: flex;
+              justify-content: space-evenly;
+              align-items: flex-end;
+              width: 100%;
+              height: 33%;
+              .chocolate-chip {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: brown;
+              }
+            }
+            .cookie-middle {
+              width: 100%;
+              height: 33%;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              .chocolate-chip {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: brown;
+              }
+            }
+            .cookie-bottom {
+              height: 33%;
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+              align-items: flex-start;
+              .chocolate-chip {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: brown;
+              }
+            }
+          }
+        }
+        .cookie-div-closed {
+          display: none;
+        }
+      }
+    }
+    .food-shelf-right {
+      height: 240px;
+      width: 15px;
+      background-color: chocolate;
+    }
+  }
+
+  .lily-sign-div {
+    height: 100%;
+    @include flex(flex-start);
+
+    .lily-sign {
+      background-color: white;
+      border: solid purple;
+      height: 60px;
+      width: 200px;
+      @include flex(center);
+
+      .food-sign {
+        color: purple;
+      }
+    }
+  }
+}
+
 .food-middle-left {
   @include flex(center);
   position: absolute;
@@ -13,55 +574,6 @@
   bottom: 27.5vh;
   height: 27.5vh;
   width: 30vw;
-
-  .bone-div {
-    .bone {
-      display: flex;
-      align-items: center;
-
-      .bone-left {
-        position: relative;
-        left: 12px;
-        .bone-top-corner {
-          height: 20px;
-          width: 20px;
-          background-color: white;
-          border-radius: 50%;
-          position: relative;
-        }
-        .bone-bottom-corner {
-          height: 20px;
-          width: 20px;
-          background-color: white;
-          border-radius: 50%;
-          position: relative;
-        }
-      }
-      .bone-middle {
-        width: 50px;
-        height: 20px;
-        background-color: white;
-      }
-      .bone-right {
-        position: relative;
-        right: 12px;
-        .bone-top-corner {
-          height: 20px;
-          width: 20px;
-          background-color: white;
-          border-radius: 50%;
-          position: relative;
-        }
-        .bone-bottom-corner {
-          height: 20px;
-          width: 20px;
-          background-color: white;
-          border-radius: 50%;
-          position: relative;
-        }
-      }
-    }
-  }
 }
 
 .food-middle-middle {
@@ -71,61 +583,6 @@
   bottom: 27.5vh;
   height: 27.5vh;
   width: 40vw;
-
-  .pizza {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: rgb(253, 253, 190);
-    border: solid peru 8px;
-    @include flex(space-evenly);
-
-    .pizza-horizontal-line {
-      position: absolute;
-      width: 120%;
-      height: 1%;
-      top: 49.5%;
-      right: -10%;
-      background-color: black;
-    }
-
-    .pizza-vertical-line {
-      position: absolute;
-      height: 120%;
-      width: 1px;
-      left: 49.5%;
-      top: -10%;
-      background-color: black;
-    }
-
-    .pepperoni-outer {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 65%;
-
-      .pepperoni {
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background-color: red;
-      }
-    }
-
-    .pepperoni-innner {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 100%;
-
-      .pepperoni {
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background-color: red;
-      }
-    }
-  }
 }
 
 .food-middle-right {
@@ -135,61 +592,6 @@
   bottom: 27.5vh;
   height: 27.5vh;
   width: 30vw;
-
-  .corn-div {
-    .corn {
-      height: 200px;
-      width: 50px;
-      border-radius: 50% 50% 25% 25%;
-      background-image: linear-gradient(
-        yellow 9%,
-        black 9%,
-        black 10%,
-        yellow 10%,
-        yellow 19%,
-        black 19%,
-        black 20%,
-        yellow 20%,
-        yellow 29%,
-        black 29%,
-        black 30%,
-        yellow 30%,
-        yellow 39%,
-        black 39%,
-        black 40%,
-        yellow 40%,
-        yellow 49%,
-        black 49%,
-        black 50%,
-        yellow 50%,
-        yellow 59%,
-        black 59%,
-        black 60%,
-        yellow 60%,
-        yellow 69%,
-        black 69%,
-        black 70%,
-        yellow 70%,
-        yellow 79%,
-        black 79%,
-        black 80%,
-        yellow 80%,
-        yellow 89%,
-        black 89%,
-        black 90%,
-        yellow 90%
-      );
-      display: flex;
-      justify-content: space-evenly;
-      overflow: hidden;
-
-      .corn-line {
-        height: 100%;
-        width: 1px;
-        background-color: black;
-      }
-    }
-  }
 }
 
 .food-bottom-left {
@@ -199,102 +601,6 @@
   left: 0px;
   width: 30vw;
   height: 27.5vh;
-
-  .bowl-div {
-    .bowl {
-      @include flex(center);
-      height: 100px;
-      width: 100px;
-      background-color: orchid;
-      border-radius: 50%;
-
-      .inner-bowl {
-        @include flex(center);
-        height: 90%;
-        width: 90%;
-        background-color: orchid;
-        border: solid 0.5px;
-        border-radius: 50%;
-
-        .bowl-row-one {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-        }
-        .bowl-row-two {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          width: 100%;
-        }
-        .bowl-row-three {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-        }
-        .bowl-row-four {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          width: 100%;
-        }
-        .bowl-row-five {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-        }
-        .mnm-red {
-          height: 15px;
-          width: 15px;
-          background-color: red;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnm-yellow {
-          height: 15px;
-          width: 15px;
-          background-color: yellow;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnm-blue {
-          height: 15px;
-          width: 15px;
-          background-color: dodgerblue;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnm-green {
-          height: 15px;
-          width: 15px;
-          background-color: green;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnm-orange {
-          height: 15px;
-          width: 15px;
-          background-color: orange;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnm-brown {
-          height: 15px;
-          width: 15px;
-          background-color: brown;
-          border-radius: 50%;
-          @include flex(center);
-        }
-        .mnmm {
-          position: relative;
-          bottom: 2px;
-        }
-      }
-    }
-  }
 }
 
 .food-bottom-middle {
@@ -304,35 +610,6 @@
   left: 30vw;
   height: 27.5vh;
   width: 40vw;
-
-  .nut-div {
-    .nut {
-      @include flex(center);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: lightgoldenrodyellow;
-      border: solid 0.5px;
-
-      .nut-stem {
-        height: 10px;
-        width: 5px;
-        background-color: brown;
-      }
-      .nut-top {
-        width: 50px;
-        height: 20px;
-        border-radius: 50% 50% 0% 0%;
-        background-color: rgb(189, 91, 22);
-      }
-      .nut-bottom {
-        width: 40px;
-        height: 40px;
-        background-color: peru;
-        border-radius: 0% 0% 50% 50%;
-      }
-    }
-  }
 }
 
 .food-bottom-right {
@@ -342,75 +619,4 @@
   right: 0px;
   height: 27.5vh;
   width: 30vw;
-
-  .banana-div {
-      @include flex(center);
-
-    .banana-top {
-        height: 20px;
-        width: 25px;
-        background-color: black;
-        background-image: linear-gradient(black 50%, yellow 100%);
-        position: relative;
-        left: 10px;
-        z-index: 1;
-        transform: rotate(-30deg);
-
-    }
-    .bananas {
-      display: flex;
-
-      .banana-line {
-        height: 100px;
-        width: 70px;
-        border-right: solid 2px; 
-        border-radius: 50%;
-        transform: rotate(60deg);
-        position:  relative;
-        left: 136px;
-        bottom: 24px;
-        z-index: 2;
-
-      }
-
-      .banana-one {
-        height: 100px;
-        width: 70px;
-        border-right: 22px solid yellow;
-        position: relative;
-        transform: rotate(60deg);
-        left: 66.5px;
-        bottom: 26.25px;
-        border-radius: 50%;
-      }
-      .banana-two {
-        height: 100px;
-        width: 70px;
-        border-radius: 50%;
-        border-right: 22px solid yellow;
-        position: relative;
-        left: 25px;
-        transform: rotate(15deg);
-      }
-      .banana-three {
-        height: 100px;
-        width: 70px;
-        border-radius: 50%;
-        border-right: 22px solid yellow;
-        position: relative;
-        right: 15px;
-        transform: rotate(-20deg);
-      }
-      .banana-four {
-        height: 100px;
-        width: 70px;
-        border-radius: 50%;
-        border-right: 22px solid yellow;
-        transform: rotate(-60deg);
-        position: relative;
-        bottom: 20px;
-        right: 58px;
-      }
-    }
-  }
 }
