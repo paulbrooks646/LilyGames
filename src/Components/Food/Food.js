@@ -212,9 +212,45 @@ export default function Food() {
                   </div>
                 </div>
               </div>
+              <div className="cake">
+                <div className="cake-top"></div>
+                <div className="cake-middle"></div>
+                <div className="cake-bottom"></div>
+              </div>
             </div>
             <div className="food-shelf-board"></div>
-            <div className="food-shelf-space"></div>
+            <div className="food-shelf-space">
+              <div className="pie-div">
+                <div className="pie">
+                  <div className="cherry-div">
+                    <div className="cherry-stem"></div>
+                    <div className="cherry-main"></div>
+                  </div>
+                  <div className="pie-top">
+                    <div className="cherry-hole-one"></div>
+                    <div className="cherry-hole-two"></div>
+                    <div className="cherry-hole-three"></div>
+                    <div className="cherry-hole-four"></div>
+                    <div className="cherry-hole-five"></div>
+                  </div>
+                  <div className="pie-middle">
+                    <div className="pie-frill"></div>
+                    <div className="pie-frill"></div>
+                    <div className="pie-frill"></div>
+                    <div className="pie-frill"></div>
+                    <div className="pie-frill"></div>
+                    <div className="pie-frill"></div>
+                  </div>
+                  <div className="pie-bottom"></div>
+                </div>
+              </div>
+              <div className="lollipop-div">
+                <div className="lollipop">
+                  <div className="lollipop-top"></div>
+                  <div className="lollipop-stick"></div>
+                </div>
+              </div>
+            </div>
             <div className="food-shelf-board"></div>
           </div>
           <div className="food-shelf-right"></div>
@@ -224,7 +260,52 @@ export default function Food() {
       <div className="food-middle-middle"></div>
       <div className="food-middle-right"></div>
       <div className="food-bottom-left"></div>
-      <div className="food-bottom-middle"></div>
+      <div className="food-bottom-middle">
+        {/* <div className="dog">
+          <div className="dog-top">
+            <div className="dog-left-ear"></div>
+            <div className="dog-face">
+              <div className="dog-eye-div">
+                <div className="dog-eye">
+                  <div className="dog-pupil"></div>
+                </div>
+                <div className="dog-eye">
+                  <div className="dog-pupil"></div>
+                </div>
+              </div>
+              <div className="dog-nose"></div>
+              <div className="dog-smile">
+                <div className="dog-mouth"></div>
+                <div className="dog-tongue">
+                  <div className="tongue-line"></div>
+                </div>
+              </div>
+            </div>
+            <div className="dog-right-ear"></div>
+          </div>
+          <div className="dog-bottom">
+            <div className="dog-body">
+              <div className="dog-torso"></div>
+              <div className="dog-leg-div">
+                <div className="dog-leg-one">
+                  <div className="dog-paw"></div>
+                </div>
+                <div className="dog-leg-two">
+                  <div className="dog-paw"></div>
+                </div>
+                <div className="dog-leg-one">
+                  <div className="dog-paw"></div>
+                </div>
+                <div className="dog-leg-two">
+                  <div className="dog-paw"></div>
+                </div>
+              </div>
+            </div>
+            <div className="dog-tail"></div>
+          </div>
+        </div> */}
+        
+      </div>
       <div className="food-bottom-right"></div>
     </div>
   );

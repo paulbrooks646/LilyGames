@@ -540,6 +540,220 @@
         .cookie-div-closed {
           display: none;
         }
+
+        .cake {
+          @include flex(center);
+          position: relative;
+          z-index: 3;
+          top: 11px;
+          cursor: pointer;
+          transform: scale(0.7);
+
+          .cake-top {
+            width: 40px;
+            height: 20px;
+            background-image: linear-gradient(
+              -45deg,
+              brown 15%,
+              white 15%,
+              white 19%,
+              brown 19%,
+              brown 34%,
+              white 34%,
+              white 38%,
+              brown 38%,
+              brown 53%,
+              white 53%,
+              white 57%,
+              brown 57%,
+              brown 72%,
+              white 72%,
+              white 76%,
+              brown 76%,
+              brown 91%,
+              white 91%,
+              white 95%,
+              brown 95%
+            );
+
+            border-bottom: solid 0.5px;
+          }
+          .cake-middle {
+            width: 60px;
+            height: 25px;
+
+            background-image: linear-gradient(
+              45deg,
+              brown 15%,
+              white 15%,
+              white 19%,
+              brown 19%,
+              brown 34%,
+              white 34%,
+              white 38%,
+              brown 38%,
+              brown 53%,
+              white 53%,
+              white 57%,
+              brown 57%,
+              brown 72%,
+              white 72%,
+              white 76%,
+              brown 76%,
+              brown 91%,
+              white 91%,
+              white 95%,
+              brown 95%
+            );
+            border-bottom: solid 0.5px;
+          }
+          .cake-bottom {
+            width: 80px;
+            height: 30px;
+
+            background-image: linear-gradient(
+              -45deg,
+              brown 15%,
+              white 15%,
+              white 19%,
+              brown 19%,
+              brown 34%,
+              white 34%,
+              white 38%,
+              brown 38%,
+              brown 53%,
+              white 53%,
+              white 57%,
+              brown 57%,
+              brown 72%,
+              white 72%,
+              white 76%,
+              brown 76%,
+              brown 91%,
+              white 91%,
+              white 95%,
+              brown 95%
+            );
+          }
+        }
+
+        .cake-closed {
+          display: none;
+        }
+       .pie-div {
+         @include flex(flex-end);
+         
+         .pie {
+           @include flex(center);
+           cursor: pointer;
+
+           .cherry-div {
+             @include flex(center);
+
+             .cherry-stem {
+               height: 5px;
+               width: 2px;
+               background-color: olivedrab;
+             }
+             .cherry-main {
+               height: 10px;
+               width: 10px;
+               border-radius: 50%;
+               background-color: red;
+             }
+           }
+
+           .pie-top {
+             height: 12px;
+             width: 60px;
+             border-radius: 50% 50% 0% 0%;
+             background-color: goldenrod;
+             display: flex;
+             justify-content: space-evenly;
+             align-items: center;
+
+             .cherry-hole-one {
+               height: 6px;
+               width: 2px;
+               border-radius: 20% 20% 20% 20%;
+               background-color: red;
+               transform: rotate(30deg);
+             }
+             .cherry-hole-two {
+               height: 6px;
+               width: 2px;
+               border-radius: 20% 20% 20% 20%;
+               background-color: red;
+               transform: rotate(15deg);
+             }
+             .cherry-hole-three {
+               height: 6px;
+               width: 2px;
+               border-radius: 20% 20% 20% 20%;
+               background-color: red;
+             }
+             .cherry-hole-four {
+               height: 6px;
+               width: 2px;
+               border-radius: 20% 20% 20% 20%;
+               background-color: red;
+               transform: rotate(-15deg);
+             }
+             .cherry-hole-five {
+               height: 6px;
+               width: 2px;
+               border-radius: 20% 20% 20% 20%;
+               background-color: red;
+               transform: rotate(-30deg);
+             }
+           }
+           .pie-middle {
+             width: 60px;
+             display: flex;
+             justify-content: space-between;
+             height: 1px;
+             z-index: 1;
+
+             .pie-frill {
+               width: 8px;
+               height: 3px;
+               background-color: goldenrod;
+               border-radius: 0% 0% 50% 50%;
+             }
+           }
+           .pie-bottom {
+             width: 55px;
+             height: 7px;
+             background-color: silver;
+           }
+           
+         }
+       }
+       .pie-div-closed {
+         display: none;
+       }
+       
+       .lollipop-div {
+        .lollipop {
+          @include flex(flex-end);
+          cursor: pointer;
+
+          .lollipop-top {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-image: radial-gradient(pink 10%, white 20%, limegreen 40%, white 50%, skyblue 60%);
+          }
+          .lollipop-stick {
+            height: 20px;
+            width: 2px;
+            background-color: white;
+          }
+        }
+       }
+       .lollipop-div-closed {
+         display: none;
+       }
       }
     }
     .food-shelf-right {
@@ -610,6 +824,206 @@
   left: 30vw;
   height: 27.5vh;
   width: 40vw;
+
+  .dog {
+    height: 400px;
+    width: 300px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 200px;
+    animation-name: pink;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 6s;
+
+    .dog-top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      top: 50px;
+      left: 25px;
+      z-index: 2;
+
+      .dog-left-ear {
+        border-radius: 50% 0% 50% 0%;
+        border: solid .5px;
+        background-color: pink;
+        height: 30px;
+        width: 20px;
+        position: relative;
+        left: 15px;
+        top: 5px;
+        transform: rotate(10deg);
+      }
+
+      .dog-face {
+        width: 90px;
+        height: 80px;
+        background-color: pink;
+        border: solid .5px;
+        border-radius: 50%;
+        @include flex(space-evenly);
+        z-index: 3;
+
+        .dog-eye-div {
+          width: 100%;
+          @include center(space-evenly);
+          height: 25px;
+
+          .dog-eye {
+            border-radius: 50%;
+            height: 15px;
+            width: 19px;
+            border: solid .5px;
+            background-color: white;
+            @include flex(center);
+
+            .dog-pupil {
+              height: 5px;
+              width: 5px;
+              background-color: black;
+              border-radius: 50%;
+            }
+          }
+        }
+        .dog-nose {
+          border-radius: 50%;
+          background-color: black;
+          width: 18px;
+          height: 10px;
+        }
+        .dog-smile {
+          @include flex(cneter);
+
+          .dog-mouth {
+            width: 40px;
+            height: 15px;
+            border-radius: 50%;
+            border: solid black 2px;
+            background-color: red;
+          }
+          .dog-tongue {
+            position: relative;
+            bottom: 6px;
+            background-color: red;
+            width: 20px;
+            height: 14px;
+            border-radius: 0% 0% 50% 50%;
+            display: flex;
+            justify-content: center;
+            border: solid .25px;
+            border-top: none;
+
+            .tongue-line {
+              height: 100%;
+              width: 1px;
+              background-color: black;
+            }
+          }
+        }
+      }
+      .dog-right-ear {
+        border-radius: 0% 50% 0% 50%;
+        border: solid .5px;
+        background-color: pink;
+        height: 30px;
+        width: 20px;
+        position: relative;
+        right: 15px;
+        top: 5px;
+        transform: rotate(-10deg);
+      }
+    }
+    .dog-bottom {
+      display: flex;
+      justify-content: center;
+
+      .dog-body {
+        z-index: 1;
+        .dog-torso {
+          width: 125px;
+          height: 90px;
+          background-color: pink;
+          border: solid .5px;
+          border-radius: 50%;
+          z-index: 1;
+          position: relative;
+        }
+        .dog-leg-div {
+          width: 125px;
+          display: flex;
+          justify-content: space-evenly;
+          position: relative;
+
+          .dog-leg-one {
+            height: 45px;
+            width: 20px;
+            background-color: pink;
+            border: solid .5px;
+            border-radius: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            right: 5px;
+            bottom: 25px;
+
+            .dog-paw {
+              border-radius: 50% 50% 25% 25%;
+              background-color: pink;
+              width: 35px;
+              height: 20px;
+              border: solid .5px;
+              position: relative;
+              top: 5px;
+              right: 8px;
+            }
+          }
+          .dog-leg-two {
+            height: 40px;
+            width: 20px;
+            background-color: pink;
+            border: solid .5px;
+            border-top: none;
+            border-radius: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+            bottom: 15px;
+            right: 5px;
+
+            .dog-paw {
+              border-radius: 50% 50% 25% 25%;
+              background-color: pink;
+              width: 35px;
+              height: 20px;
+              border: solid .5px;
+              position: relative;
+              top: 5px;
+              right: 8px;
+            }
+          }
+        }
+      }
+    }
+    .dog-tail {
+      border-radius: 50%;
+      background-color: pink;
+      border: solid .5px;
+      height: 60px;
+      width: 10px;
+      transform: rotate(-60deg);
+      position: relative;
+      top: 20px;
+    }
+  }
 }
 
 .food-bottom-right {
@@ -619,4 +1033,16 @@
   right: 0px;
   height: 27.5vh;
   width: 30vw;
+}
+
+@keyframes pink {
+  0% {
+    top: 200px;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: 200px;
+  }
 }
