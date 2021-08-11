@@ -5,8 +5,21 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import House from "../House/House";
+import Swiper from "../Swiper/Swiper";
 
 export default function Food() {
+  const [dog, setDog] = useState(false);
+  const [turtles, setTurtles] = useState(false);
+  const [chicken, setChicken] = useState(false);
+  const [swiper, setSwiper] = useState(true);
+  const [tico, setTico] = useState(false);
+  const [boots, setBoots] = useState(false);
+  const [mouse, setMouse] = useState(false);
+  const [monster, setMonster] = useState(false);
+  const [pig, setPig] = useState(false);
+  const [grandpa, setGrandpa] = useState(false);
+  const [ember, setEmber] = useState(false);
+
   return (
     <div className="main">
       <nav className="food-nav"></nav>
@@ -261,7 +274,7 @@ export default function Food() {
       <div className="food-middle-right"></div>
       <div className="food-bottom-left"></div>
       <div className="food-bottom-middle">
-        {/* <div className="dog">
+        <div className={`${dog ? "dog" : "dog-closed"}`}>
           <div className="dog-top">
             <div className="dog-left-ear"></div>
             <div className="dog-face">
@@ -303,9 +316,141 @@ export default function Food() {
             </div>
             <div className="dog-tail"></div>
           </div>
-        </div> */}
-        
+        </div>
+
+        <div className={`${turtles ? "turtle" : "turtle-closed"}`}>
+          <div className="michaelangelo">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className={`${turtles ? "turtle" : "turtle-closed"}`}>
+          <div className="donatello">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+
+        <div className={`${turtles ? "turtle" : "turtle-closed"}`}>
+          <div className="raphael">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className={`${turtles ? "turtle" : "turtle-closed"}`}>
+          <div className="leonardo">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className={`${chicken ? "chicken" : "chicken-closed"}`}>
+          <div className="chicken-hair"></div>
+          <div className="chicken-head">
+            <div className="chicken-brows">
+              <div className="chicken-brow-left"></div>
+              <div className="chicken-brow-right"></div>
+            </div>
+            <div className="chicken-face">
+              <div className="chicken-eyes">
+                <div className="chicken-eye">
+                  <div className="chicken-pupil"></div>
+                </div>
+                <div className="chicken-eye">
+                  <div className="chicken-pupil"></div>
+                </div>
+              </div>
+              <div className="chicken-beak"></div>
+            </div>
+          </div>
+          <div className="chicken-center">
+            <div className="chicken-arm-left">
+              <div className="chicken-finger-one"></div>
+              <div className="chicken-finger-two"></div>
+              <div className="chicken-finger-three"></div>
+              <div className="chicken-finger-four"></div>
+            </div>
+            <div className="chicken-body">
+              <div className="chicken-body-middle">
+                <div className="chicken-body-middle-main">
+                  <div className="chicken-body-top">
+                    <div className="chicken-beard-one"></div>
+                    <div className="chicken-beard-two"></div>
+                    <div className="chicken-beard-three"></div>
+                    <div className="chicken-body-top-frills">
+                      <div className="chicken-body-top-frill-one"></div>
+                      <div className="chicken-body-top-frill-two"></div>
+                      <div className="chicken-body-top-frill-three"></div>
+                      <div className="chicken-body-top-frill-four"></div>
+                      <div className="chicken-body-top-frill-five"></div>
+                      <div className="chicken-body-top-frill-six"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="chicken-body-middle-frills">
+                  <div className="chicken-body-middle-frill-one"></div>
+                  <div className="chicken-body-middle-frill-two"></div>
+                  <div className="chicken-body-middle-frill-three"></div>
+                  <div className="chicken-body-middle-frill-four"></div>
+                  <div className="chicken-body-middle-frill-five"></div>
+                  <div className="chicken-body-middle-frill-six"></div>
+                  <div className="chicken-body-middle-frill-seven"></div>
+                  <div className="chicken-body-middle-frill-eight"></div>
+                </div>
+              </div>
+            </div>
+            <div className="chicken-arm-right">
+              <div className="chicken-finger-one"></div>
+              <div className="chicken-finger-two"></div>
+              <div className="chicken-finger-three"></div>
+              <div className="chicken-finger-four"></div>
+            </div>
+          </div>
+          <div className="chicken-legs">
+            <div className="chicken-leg">
+              <div className="chicken-foot">
+                <div className="chicken-toe-one"></div>
+                <div className="chicken-toe-two"></div>
+                <div className="chicken-toe-three"></div>
+                <div className="chicken-toe-four"></div>
+              </div>
+            </div>
+            <div className="chicken-leg">
+              <div className="chicken-foot">
+                <div className="chicken-toe-one"></div>
+                <div className="chicken-toe-two"></div>
+                <div className="chicken-toe-three"></div>
+                <div className="chicken-toe-four"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`${swiper ? "swiper-div" : "swiper-div-closed"}`}>
+          <Swiper />
+        </div>
       </div>
+
       <div className="food-bottom-right"></div>
     </div>
   );

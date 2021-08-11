@@ -640,120 +640,125 @@
         .cake-closed {
           display: none;
         }
-       .pie-div {
-         @include flex(flex-end);
-         
-         .pie {
-           @include flex(center);
-           cursor: pointer;
-
-           .cherry-div {
-             @include flex(center);
-
-             .cherry-stem {
-               height: 5px;
-               width: 2px;
-               background-color: olivedrab;
-             }
-             .cherry-main {
-               height: 10px;
-               width: 10px;
-               border-radius: 50%;
-               background-color: red;
-             }
-           }
-
-           .pie-top {
-             height: 12px;
-             width: 60px;
-             border-radius: 50% 50% 0% 0%;
-             background-color: goldenrod;
-             display: flex;
-             justify-content: space-evenly;
-             align-items: center;
-
-             .cherry-hole-one {
-               height: 6px;
-               width: 2px;
-               border-radius: 20% 20% 20% 20%;
-               background-color: red;
-               transform: rotate(30deg);
-             }
-             .cherry-hole-two {
-               height: 6px;
-               width: 2px;
-               border-radius: 20% 20% 20% 20%;
-               background-color: red;
-               transform: rotate(15deg);
-             }
-             .cherry-hole-three {
-               height: 6px;
-               width: 2px;
-               border-radius: 20% 20% 20% 20%;
-               background-color: red;
-             }
-             .cherry-hole-four {
-               height: 6px;
-               width: 2px;
-               border-radius: 20% 20% 20% 20%;
-               background-color: red;
-               transform: rotate(-15deg);
-             }
-             .cherry-hole-five {
-               height: 6px;
-               width: 2px;
-               border-radius: 20% 20% 20% 20%;
-               background-color: red;
-               transform: rotate(-30deg);
-             }
-           }
-           .pie-middle {
-             width: 60px;
-             display: flex;
-             justify-content: space-between;
-             height: 1px;
-             z-index: 1;
-
-             .pie-frill {
-               width: 8px;
-               height: 3px;
-               background-color: goldenrod;
-               border-radius: 0% 0% 50% 50%;
-             }
-           }
-           .pie-bottom {
-             width: 55px;
-             height: 7px;
-             background-color: silver;
-           }
-           
-         }
-       }
-       .pie-div-closed {
-         display: none;
-       }
-       
-       .lollipop-div {
-        .lollipop {
+        .pie-div {
           @include flex(flex-end);
-          cursor: pointer;
 
-          .lollipop-top {
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            background-image: radial-gradient(pink 10%, white 20%, limegreen 40%, white 50%, skyblue 60%);
-          }
-          .lollipop-stick {
-            height: 20px;
-            width: 2px;
-            background-color: white;
+          .pie {
+            @include flex(center);
+            cursor: pointer;
+
+            .cherry-div {
+              @include flex(center);
+
+              .cherry-stem {
+                height: 5px;
+                width: 2px;
+                background-color: olivedrab;
+              }
+              .cherry-main {
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: red;
+              }
+            }
+
+            .pie-top {
+              height: 12px;
+              width: 60px;
+              border-radius: 50% 50% 0% 0%;
+              background-color: goldenrod;
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+
+              .cherry-hole-one {
+                height: 6px;
+                width: 2px;
+                border-radius: 20% 20% 20% 20%;
+                background-color: red;
+                transform: rotate(30deg);
+              }
+              .cherry-hole-two {
+                height: 6px;
+                width: 2px;
+                border-radius: 20% 20% 20% 20%;
+                background-color: red;
+                transform: rotate(15deg);
+              }
+              .cherry-hole-three {
+                height: 6px;
+                width: 2px;
+                border-radius: 20% 20% 20% 20%;
+                background-color: red;
+              }
+              .cherry-hole-four {
+                height: 6px;
+                width: 2px;
+                border-radius: 20% 20% 20% 20%;
+                background-color: red;
+                transform: rotate(-15deg);
+              }
+              .cherry-hole-five {
+                height: 6px;
+                width: 2px;
+                border-radius: 20% 20% 20% 20%;
+                background-color: red;
+                transform: rotate(-30deg);
+              }
+            }
+            .pie-middle {
+              width: 60px;
+              display: flex;
+              justify-content: space-between;
+              height: 1px;
+              z-index: 1;
+
+              .pie-frill {
+                width: 8px;
+                height: 3px;
+                background-color: goldenrod;
+                border-radius: 0% 0% 50% 50%;
+              }
+            }
+            .pie-bottom {
+              width: 55px;
+              height: 7px;
+              background-color: silver;
+            }
           }
         }
-       }
-       .lollipop-div-closed {
-         display: none;
-       }
+        .pie-div-closed {
+          display: none;
+        }
+
+        .lollipop-div {
+          .lollipop {
+            @include flex(flex-end);
+            cursor: pointer;
+
+            .lollipop-top {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              background-image: radial-gradient(
+                pink 10%,
+                white 20%,
+                limegreen 40%,
+                white 50%,
+                skyblue 60%
+              );
+            }
+            .lollipop-stick {
+              height: 20px;
+              width: 2px;
+              background-color: white;
+            }
+          }
+        }
+        .lollipop-div-closed {
+          display: none;
+        }
       }
     }
     .food-shelf-right {
@@ -818,12 +823,15 @@
 }
 
 .food-bottom-middle {
-  @include flex(center);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   position: absolute;
   bottom: 0px;
-  left: 30vw;
+  left: 0px;
   height: 27.5vh;
-  width: 40vw;
+  width: 100vw;
+  border: solid purple;
 
   .dog {
     height: 400px;
@@ -832,7 +840,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 200px;
+    top: 300px;
     animation-name: pink;
     animation-iteration-count: 1;
     animation-timing-function: linear;
@@ -849,7 +857,7 @@
 
       .dog-left-ear {
         border-radius: 50% 0% 50% 0%;
-        border: solid .5px;
+        border: solid 0.5px;
         background-color: pink;
         height: 30px;
         width: 20px;
@@ -863,7 +871,7 @@
         width: 90px;
         height: 80px;
         background-color: pink;
-        border: solid .5px;
+        border: solid 0.5px;
         border-radius: 50%;
         @include flex(space-evenly);
         z-index: 3;
@@ -877,7 +885,7 @@
             border-radius: 50%;
             height: 15px;
             width: 19px;
-            border: solid .5px;
+            border: solid 0.5px;
             background-color: white;
             @include flex(center);
 
@@ -914,7 +922,7 @@
             border-radius: 0% 0% 50% 50%;
             display: flex;
             justify-content: center;
-            border: solid .25px;
+            border: solid 0.25px;
             border-top: none;
 
             .tongue-line {
@@ -927,7 +935,7 @@
       }
       .dog-right-ear {
         border-radius: 0% 50% 0% 50%;
-        border: solid .5px;
+        border: solid 0.5px;
         background-color: pink;
         height: 30px;
         width: 20px;
@@ -947,7 +955,7 @@
           width: 125px;
           height: 90px;
           background-color: pink;
-          border: solid .5px;
+          border: solid 0.5px;
           border-radius: 50%;
           z-index: 1;
           position: relative;
@@ -962,7 +970,7 @@
             height: 45px;
             width: 20px;
             background-color: pink;
-            border: solid .5px;
+            border: solid 0.5px;
             border-radius: 25%;
             display: flex;
             flex-direction: column;
@@ -977,7 +985,7 @@
               background-color: pink;
               width: 35px;
               height: 20px;
-              border: solid .5px;
+              border: solid 0.5px;
               position: relative;
               top: 5px;
               right: 8px;
@@ -987,7 +995,7 @@
             height: 40px;
             width: 20px;
             background-color: pink;
-            border: solid .5px;
+            border: solid 0.5px;
             border-top: none;
             border-radius: 25%;
             display: flex;
@@ -1004,7 +1012,7 @@
               background-color: pink;
               width: 35px;
               height: 20px;
-              border: solid .5px;
+              border: solid 0.5px;
               position: relative;
               top: 5px;
               right: 8px;
@@ -1016,7 +1024,7 @@
     .dog-tail {
       border-radius: 50%;
       background-color: pink;
-      border: solid .5px;
+      border: solid 0.5px;
       height: 60px;
       width: 10px;
       transform: rotate(-60deg);
@@ -1024,6 +1032,739 @@
       top: 20px;
     }
   }
+
+  .dog-closed {
+    display: none;
+  }
+  .turtle {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: limegreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: scale(0.75);
+    position: relative;
+    top: 300px;
+    animation-name: pink;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 6s;
+
+    .raphael {
+      height: 25px;
+      width: 100%;
+      background-color: red;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 50% 50% 0% 0%;
+    }
+
+    .leonardo {
+      height: 25px;
+      width: 100%;
+      background-color: skyblue;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 50% 50% 0% 0%;
+    }
+    .michaelangelo {
+      height: 25px;
+      width: 100%;
+      background-color: orange;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 50% 50% 0% 0%;
+    }
+
+    .donatello {
+      height: 25px;
+      width: 100%;
+      background-color: purple;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 50% 50% 0% 0%;
+    }
+    .turtle-eye {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .turtle-pupil {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: black;
+      }
+    }
+
+    .turtle-mouth {
+      width: 80px;
+      height: 10px;
+      border-radius: 50%;
+      border-bottom: solid black 2px;
+    }
+  }
+
+  .turtle-closed {
+    display: none;
+  }
+
+  .chicken {
+    @include flex(flex-start);
+    top: 450px;
+    animation-name: chicken;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    .chicken-hair {
+      height: 100px;
+      width: 30px;
+      border-radius: 50%;
+      background-image: linear-gradient(red 50%, transparent 50%);
+    }
+
+    .chicken-head {
+      position: relative;
+      bottom: 71px;
+      z-index: 2;
+
+      .chicken-brows {
+        @include center(space-evenly);
+
+        .chicken-brow-left {
+          height: 20px;
+          width: 20px;
+          background-image: linear-gradient(
+            40deg,
+            transparent 50%,
+            #ff8080 50%
+          );
+          position: relative;
+          right: 10px;
+          top: 15px;
+          transform: rotate(-50deg);
+        }
+
+        .chicken-brow-right {
+          height: 20px;
+          width: 20px;
+          background-image: linear-gradient(
+            -40deg,
+            transparent 50%,
+            #ff8080 50%
+          );
+          position: relative;
+          left: 10px;
+          top: 15px;
+          transform: rotate(50deg);
+        }
+      }
+
+      .chicken-face {
+        height: 150px;
+        width: 150px;
+        background-image: linear-gradient(#ff8080 50%, transparent 50%);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .chicken-eyes {
+          @include center(space-evenly);
+          width: 100%;
+          height: 25px;
+          top: 10px;
+
+          .chicken-eye {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: white;
+            @include flex(center);
+
+            .chicken-pupil {
+              height: 10px;
+              width: 10px;
+              border-radius: 50%;
+              background-color: black;
+            }
+          }
+        }
+
+        .chicken-beak {
+          height: 60px;
+          width: 60px;
+          background-image: linear-gradient(
+            45deg,
+            transparent 50%,
+            #ffa500 50%
+          );
+          border-radius: 0% 25%;
+          transform: rotate(135deg);
+          border-right: solid 0.5px;
+          border-top: solid 0.5px;
+          position: relative;
+          bottom: 15px;
+        }
+      }
+    }
+
+    .chicken-center {
+      @include center(center);
+
+      .chicken-arm-left {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 25% 0% 0% 25%;
+        position: relative;
+        bottom: 150px;
+        left: 40px;
+        transform: rotate(-45deg);
+
+        .chicken-finger-one {
+          height: 100px;
+          width: 30px;
+          border-radius: 50% 0% 0% 50%;
+          background-color: red;
+          position: relative;
+          right: 17px;
+          transform: rotate(50deg);
+          bottom: 12px;
+        }
+        .chicken-finger-two {
+          height: 100px;
+          width: 30px;
+          border-radius: 50% 0% 0% 50%;
+          background-color: red;
+          position: relative;
+          right: 29px;
+          transform: rotate(10deg);
+          bottom: 6px;
+        }
+        .chicken-finger-three {
+          height: 100px;
+          width: 30px;
+          border-radius: 50% 0% 0% 50%;
+          background-color: red;
+          position: relative;
+          right: 29px;
+          bottom: 3px;
+        }
+        .chicken-finger-four {
+          height: 100px;
+          width: 30px;
+          border-radius: 50% 0% 0% 50%;
+          background-color: red;
+          position: relative;
+          right: 25px;
+          top: 4px;
+          transform: rotate(-30deg);
+        }
+      }
+
+      .chicken-body {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        background-color: red;
+        @include flex(flex-start);
+        overflow: hidden;
+        bottom: 165px;
+        z-index: 1;
+
+        .chicken-body-middle {
+          position: relative;
+
+          .chicken-body-middle-main {
+            height: 280px;
+            width: 290px;
+            background-color: crimson;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            @include flex(flex-start);
+            bottom: 50px;
+
+            .chicken-body-top {
+              height: 230px;
+              width: 230px;
+              background-color: #ff8080;
+              border-radius: 50%;
+              position: relative;
+              bottom: 25px;
+              z-index: 1;
+              @include flex(center);
+
+              .chicken-beard-one {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                top: 70px;
+              }
+              .chicken-beard-two {
+                height: 30px;
+                width: 25px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                top: 60px;
+              }
+
+              .chicken-beard-three {
+                height: 30px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: red;
+                position: relative;
+                top: 50px;
+              }
+              .chicken-body-top-frills {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                justify-content: space-evenly;
+                position: relative;
+                top: 45px;
+
+                .chicken-body-top-frill-one {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+
+                  position: absolute;
+                  left: -7px;
+                  bottom: 75px;
+                  transform: rotate(200deg);
+                }
+                .chicken-body-top-frill-two {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+                  position: absolute;
+                  left: 20px;
+                  bottom: 33px;
+                  transform: rotate(171deg);
+                }
+                .chicken-body-top-frill-three {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+                  position: absolute;
+                  bottom: 12px;
+                  left: 65px;
+                  transform: rotate(145deg);
+                }
+                .chicken-body-top-frill-four {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+                  position: absolute;
+                  bottom: 10px;
+                  right: 65px;
+                  transform: rotate(120deg);
+                }
+                .chicken-body-top-frill-five {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+                  position: absolute;
+                  right: 20px;
+                  bottom: 33px;
+                  transform: rotate(97deg);
+                }
+                .chicken-body-top-frill-six {
+                  background-image: linear-gradient(
+                    45deg,
+                    transparent 50%,
+                    #ff8080 50%
+                  );
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 0% 25% 0% 0%;
+                  position: absolute;
+                  right: -7px;
+                  bottom: 75px;
+                  transform: rotate(75deg);
+                }
+              }
+            }
+          }
+
+          .chicken-body-middle-frills {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            position: absolute;
+            bottom: 0px;
+            z-index: 2;
+
+            .chicken-body-middle-frill-one {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+              position: absolute;
+              left: -14px;
+              bottom: 120px;
+              transform: rotate(205deg);
+              z-index: 2;
+            }
+            .chicken-body-middle-frill-two {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              left: 15px;
+              bottom: 72px;
+              transform: rotate(180deg);
+            }
+            .chicken-body-middle-frill-three {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              left: 55px;
+              bottom: 45px;
+              transform: rotate(160deg);
+            }
+            .chicken-body-middle-frill-four {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              right: 100px;
+              bottom: 30px;
+              transform: rotate(120deg);
+            }
+            .chicken-body-middle-frill-five {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              left: 100px;
+              bottom: 30px;
+              transform: rotate(145deg);
+            }
+            .chicken-body-middle-frill-six {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              right: 55px;
+              bottom: 45px;
+              transform: rotate(110deg);
+            }
+            .chicken-body-middle-frill-seven {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              right: 15px;
+              bottom: 72px;
+              transform: rotate(91deg);
+            }
+            .chicken-body-middle-frill-eight {
+              background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                crimson 50%
+              );
+              height: 50px;
+              width: 50px;
+              border-radius: 0% 25% 0% 0%;
+
+              position: absolute;
+              right: -14px;
+              bottom: 120px;
+              transform: rotate(67deg);
+            }
+          }
+        }
+      }
+      .chicken-arm-right {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-radius: 0% 25% 25% 0%;
+        position: relative;
+        bottom: 150px;
+        right: 40px;
+        transform: rotate(45deg);
+
+        .chicken-finger-one {
+          height: 100px;
+          width: 30px;
+          border-radius: 0% 50% 50% 0%;
+          background-color: red;
+          position: relative;
+          left: 17px;
+          transform: rotate(-50deg);
+          bottom: 12px;
+        }
+        .chicken-finger-two {
+          height: 100px;
+          width: 30px;
+          border-radius: 0% 50% 50% 0%;
+          background-color: red;
+          position: relative;
+          left: 29px;
+          transform: rotate(-10deg);
+          bottom: 6px;
+        }
+        .chicken-finger-three {
+          height: 100px;
+          width: 30px;
+          border-radius: 0% 50% 50% 0%;
+          background-color: red;
+          position: relative;
+          left: 29px;
+          bottom: 3px;
+        }
+        .chicken-finger-four {
+          height: 100px;
+          width: 30px;
+          border-radius: 0% 50% 50% 0%;
+          background-color: red;
+          position: relative;
+          left: 25px;
+          top: 4px;
+          transform: rotate(30deg);
+        }
+      }
+    }
+    .chicken-legs {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      bottom: 185px;
+
+      .chicken-leg {
+        background-image: linear-gradient(
+          #ffae42 50%,
+          black 50%,
+          black 52%,
+          #ffae42 52%,
+          #ffae42 65%,
+          black 65%,
+          black 67%,
+          #ffae42 67%,
+          #ffae42 80%,
+          black 80%,
+          black 82%,
+          #ffae42 82%
+        );
+        height: 50px;
+        width: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        .chicken-foot {
+          display: flex;
+          justify-content: space-evenly;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          position: relative;
+          top: 47px;
+
+          .chicken-toe-one {
+            background-image: linear-gradient(
+              #ffae42 50%,
+              black 50%,
+              black 52%,
+              #ffae42 52%,
+              #ffae42 65%,
+              black 65%,
+              black 67%,
+              #ffae42 67%,
+              #ffae42 80%,
+              black 80%,
+              black 82%,
+              #ffae42 82%
+            );
+
+            height: 50px;
+            width: 15px;
+            border-radius: 0% 0% 50% 50%;
+            transform: rotate(60deg);
+            position: relative;
+            bottom: 13px;
+            right: 7px;
+          }
+          .chicken-toe-two {
+            background-image: linear-gradient(
+              #ffae42 50%,
+              black 50%,
+              black 52%,
+              #ffae42 52%,
+              #ffae42 65%,
+              black 65%,
+              black 67%,
+              #ffae42 67%,
+              #ffae42 80%,
+              black 80%,
+              black 82%,
+              #ffae42 82%
+            );
+
+            height: 50px;
+            width: 15px;
+            border-radius: 0% 0% 50% 50%;
+            transform: rotate(15deg);
+
+            position: relative;
+            right: 3px;
+            bottom: 5px;
+          }
+          .chicken-toe-three {
+            background-image: linear-gradient(
+              #ffae42 50%,
+              black 50%,
+              black 52%,
+              #ffae42 52%,
+              #ffae42 65%,
+              black 65%,
+              black 67%,
+              #ffae42 67%,
+              #ffae42 80%,
+              black 80%,
+              black 82%,
+              #ffae42 82%
+            );
+
+            height: 50px;
+            width: 15px;
+            border-radius: 0% 0% 50% 50%;
+            transform: rotate(-15deg);
+
+            position: relative;
+            bottom: 5px;
+            left: 3px;
+          }
+          .chicken-toe-four {
+            background-image: linear-gradient(
+              #ffae42 50%,
+              black 50%,
+              black 52%,
+              #ffae42 52%,
+              #ffae42 65%,
+              black 65%,
+              black 67%,
+              #ffae42 67%,
+              #ffae42 80%,
+              black 80%,
+              black 82%,
+              #ffae42 82%
+            );
+
+            height: 50px;
+            width: 15px;
+            border-radius: 0% 0% 50% 50%;
+            transform: rotate(-60deg);
+            position: relative;
+            bottom: 13px;
+            left: 6px;
+          }
+        }
+      }
+    }
+  }
+  .chicken-closed {
+    display: none;
+  }
+ 
 }
 
 .food-bottom-right {
@@ -1037,12 +1778,23 @@
 
 @keyframes pink {
   0% {
-    top: 200px;
+    top: 300px;
   }
   50% {
     top: 0px;
   }
   100% {
-    top: 200px;
+    top: 300px;
+  }
+}
+@keyframes chicken {
+  0% {
+    top: 450px;
+  }
+  50% {
+    top: -100px;
+  }
+  100% {
+    top: 450px;
   }
 }
