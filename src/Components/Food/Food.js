@@ -11,9 +11,9 @@ export default function Food() {
   const [dog, setDog] = useState(false);
   const [turtles, setTurtles] = useState(false);
   const [chicken, setChicken] = useState(false);
-  const [swiper, setSwiper] = useState(true);
+  const [swiper, setSwiper] = useState(false);
   const [tico, setTico] = useState(false);
-  const [boots, setBoots] = useState(false);
+  const [boots, setBoots] = useState(true);
   const [mouse, setMouse] = useState(false);
   const [monster, setMonster] = useState(false);
   const [pig, setPig] = useState(false);
@@ -446,11 +446,233 @@ export default function Food() {
             </div>
           </div>
         </div>
-        <div className={`${swiper ? "swiper-div" : "swiper-div-closed"}`}>
-          <Swiper />
+        <div className={swiper ? "swiper" : "swiper-closed"}>
+          <div className="swiper-head">
+            <div className="swiper-ears">
+              <div className="swiper-ear-left">
+                <div className="swiper-inner-ear"></div>
+              </div>
+              <div className="swiper-ear-right">
+                <div className="swiper-inner-ear"></div>
+              </div>
+            </div>
+            <div className="swiper-face">
+              <div className="swiper-mask">
+                <div className="swiper-brows">
+                  <div className="swiper-brow-left"></div>
+                  <div className="swiper-brow-right"></div>
+                </div>
+                <div className="swiper-eyes">
+                  <div className="swiper-eye">
+                    <div className="swiper-pupil"></div>
+                  </div>
+                  <div className="swiper-eye">
+                    <div className="swiper-pupil"></div>
+                  </div>
+                </div>
+                <div className="swiper-nose">
+                  <div className="swiper-nose-tip"></div>
+                  <div className="swiper-whiskers">
+                    <div className="swiper-whiskers-top">
+                      <div className="whisker-left"></div>
+                      <div className="whisker-middle"></div>
+                      <div className="whisker-right"></div>
+                    </div>
+                    <div className="swiper-whiskers-bottom">
+                      <div className="whisker-left"></div>
+                      <div className="whisker-middle"></div>
+                      <div className="whisker-right"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-mouth">
+                  <div className="swiper-mouth-top">
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                  </div>
+                  <div className="swiper-mouth-bottom">
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="swiper-body">
+            <div className="swiper-left-arm">
+              <div className="swiper-glove">
+                <div className="swiper-finger-one"></div>
+                <div className="swiper-finger-two"></div>
+                <div className="swiper-finger-three"></div>
+                <div className="swiper-finger-four"></div>
+              </div>
+            </div>
+            <div className="swiper-tummy"></div>
+            <div className="swiper-right-arm">
+              <div className="swiper-glove">
+                <div className="swiper-finger-one"></div>
+                <div className="swiper-finger-two"></div>
+                <div className="swiper-finger-three"></div>
+                <div className="swiper-finger-four"></div>
+              </div>
+            </div>
+          </div>
+          <div className="swiper-tail">
+            <div className="swiper-tail-one"></div>
+            <div className="swiper-tail-two"></div>
+            <div className="swiper-tail-three"></div>
+            <div className="swiper-tail-four"></div>
+            <div className="swiper-tail-five"></div>
+          </div>
+          <div className="swiper-legs">
+            <div className="swiper-leg">
+              <div className="swiper-foot"></div>
+            </div>
+            <div className="swiper-leg">
+              <div className="swiper-foot"></div>
+            </div>
+          </div>
+        </div>
+        <div className={`${tico ? "tico" : "tico-closed"}`}>
+          <div className="tico-hair">
+            <div className="tico-hair-frills">
+              <div className="tico-frill-one"></div>
+              <div className="tico-frill-two"></div>
+              <div className="tico-frill-three"></div>
+            </div>
+            <div className="tico-hair-main">
+              <div className="tico-left-brow"></div>
+              <div className="tico-right-brow"></div>
+            </div>
+          </div>
+          <div className="tico-head">
+            <div className="tico-left-ear">
+              <div className="tico-left-inner-ear"></div>
+            </div>
+            <div className="tico-face">
+              <div className="tico-eyes">
+                <div className="tico-eye">
+                  <div className="tico-pupil"></div>
+                </div>
+                <div className="tico-eye">
+                  <div className="tico-pupil"></div>
+                </div>
+              </div>
+              <div className="tico-nose">
+                <div className="tico-nose-tip"></div>
+              </div>
+              <div className="tico-mouth">
+                <div className="tico-top-teeth">
+                  <div className="tico-tooth"></div>
+                  <div className="tico-tooth"></div>
+                </div>
+                <div className="tico-bottom-teeth">
+                  <div className="tico-tooth"></div>
+                  <div className="tico-tooth"></div>
+                </div>
+              </div>
+            </div>
+            <div className="tico-right-ear">
+              <div className="tico-right-inner-ear"></div>
+            </div>
+          </div>
+          <div className="tico-body">
+            <div className="tico-left-arm"></div>
+            <div className="tico-left-vest">
+              <div className="tico-pocket"></div>
+            </div>
+            <div className="tico-tummy">
+              <div className="tico-inner-tummy"></div>
+            </div>
+            <div className="tico-right-vest">
+              <div className="tico-pocket"></div>
+            </div>
+            <div className="tico-right-arm"></div>
+          </div>
+          <div className="tico-legs">
+            <div className="tico-leg"></div>
+            <div className="tico-leg"></div>
+            <div className="tico-tail"></div>
+          </div>
+        </div>
+        <div className="boots">
+          <div className="boots-hair">
+            <div className="boots-hair-one"></div>
+            <div className="boots-hair-two"></div>
+            <div className="boots-hair-three"></div>
+          </div>
+          <div className="boot-upper-head">
+            <div className="boots-left-ear">
+              <div className="boots-left-inner-ear"></div>
+            </div>
+            <div className="boots-upper-face">
+              <div className="boots-upper-face-left">
+                <div className="boots-eye">
+                  <div className="boots-pupil"></div>
+                </div>
+              </div>
+              <div className="boots-upper-face-right">
+                <div className="boots-eye">
+                  <div className="boots-pupil"></div>
+                </div>
+              </div>
+            </div>
+            <div className="boots-right-ear">
+              <div className="boots-right-inner-ear"></div>
+            </div>
+          </div>
+          <div className="boots-lower-head">
+            <div className="boots-nose">
+              <div className="boots-left-nostril"></div>
+              <div className="boots-right-nostril"></div>
+            </div>
+            <div className="boots-mouth">
+              <div className="boots-tongue"></div>
+            </div>
+          </div>
+
+          <div className="boots-body">
+            <div className="boots-left-arm">
+              <div className="boots-left-hand">
+                <div className="boots-finger-one"></div>
+                <div className="boots-finger-two"></div>
+                <div className="boots-finger-three"></div>
+                <div className="boots-finger-four"></div>
+                <div className="boots-finger-five"></div>
+              </div>
+            </div>
+            <div className="boots-tummy">
+              <div className="boots-inner-tummy"></div>
+            </div>
+            <div className="boots-right-arm">
+              <div className="boots-right-hand">
+                <div className="boots-finger-one"></div>
+                <div className="boots-finger-two"></div>
+                <div className="boots-finger-three"></div>
+                <div className="boots-finger-four"></div>
+                <div className="boots-finger-five"></div>
+              </div>
+            </div>
+            <div className="boots-tail"></div>
+          </div>
+          <div className="boots-legs">
+            <div className="boots-leg">
+              <div className="boots-boot"></div>
+            </div>
+            <div className="boots-leg">
+              <div className="boots-boot"></div>
+            </div>
+          </div>
         </div>
       </div>
-
       <div className="food-bottom-right"></div>
     </div>
   );
